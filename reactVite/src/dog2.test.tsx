@@ -37,7 +37,19 @@ test("renders without error second", async () => {
 
 
 
-test("renders without error second", async () => {
+test("renders without error second 2", async () => {
+  
+  render(
+    <MockedProvider mocks={[]} addTypename={false}>
+      <Dog name="Buck" name2="Buck2" name3="buck3" name4="Buck4" name5="Buck56" />
+    </MockedProvider>
+   
+  );
+ // expect(screen.getByText("Loading...")).toBeInTheDocument();
+});
+
+
+test("renders without error second 3", async () => {
   
   render(
     <MockedProvider mocks={[]} addTypename={false}>
@@ -49,7 +61,20 @@ test("renders without error second", async () => {
 });
 
 
-test("renders without error second", async () => {
+
+test("renders without error second 4", async () => {
+  
+  render(
+    <MockedProvider mocks={[]} addTypename={false}>
+      <Dog name="Buck" name2="Buck2" name3="buck3" name4="Buck4" name5="Buck55" />
+    </MockedProvider>
+   
+  );
+ // expect(screen.getByText("Loading...")).toBeInTheDocument();
+});
+
+
+test("renders without error second 5", async () => {
   
   render(
     <MockedProvider mocks={[]} addTypename={false}>

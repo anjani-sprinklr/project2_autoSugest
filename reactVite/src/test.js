@@ -16,7 +16,7 @@ const ps = spawn('unbuffer', arr, { shell: true });
 
 ps.stdout.on('data', (data) => {
    console.log(data.toString());
-  console.log("op");
+  //console.log("op");
 
 });
 
