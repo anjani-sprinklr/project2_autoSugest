@@ -1,0 +1,46 @@
+{
+  "name": "reactvite",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint src/dog.test.tsx",
+    "preview": "vite preview",
+    "test": "node ./src/test.js",
+    "test2": "unbuffer npm test| tee output2.log",
+    "postinstall": "patch-package",
+    "jesttest": "jest"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.10.4",
+    "@babel/traverse": "^7.24.7",
+    "@testing-library/react": "^16.0.0",
+    "postinstall-postinstall": "^2.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "ts-simple-ast": "^21.0.4"
+  },
+  "devDependencies": {
+    "@babel/generator": "^7.24.7",
+    "@babel/parser": "^7.24.7",
+    "@testing-library/jest-dom": "^6.4.5",
+    "@types/jest": "^29.5.12",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@types/testing-library__jest-dom": "^6.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/parser": "^7.2.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "patch-package": "^8.0.0",
+    "ts-jest": "^29.1.4",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0"
+  }
+}
