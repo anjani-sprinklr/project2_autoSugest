@@ -226,12 +226,12 @@ const addMocksvariable = async (map, fileName, testAndLineArray) => {
   
   await resetVariables();
   const createMap = await createMapofTestNametoVariableName(map, testAndLineArray);
-   console.log("Map of query var to to lines", map);
-   console.log("Lins to test map", testAndLineArray);
+  // console.log("Map of query var to to lines", map);
+  // console.log("Lins to test map", testAndLineArray);
   // console.log(testNameMapstoMockVariableName)
   // console.log("MocksVaribaleArray", mockvariableArr);
   // console.log("MocksDiffArra", singleMockVariablearr);
-  console.log("TESTNAMEMAPSTOVRNAME",testNameMapstoMockVariableName)
+  // console.log("TESTNAMEMAPSTOVRNAME",testNameMapstoMockVariableName)
   const mockVariablesAST = await getAST();
 
   //console.log(mockVariablesAST);
@@ -258,11 +258,11 @@ const addMocksvariable = async (map, fileName, testAndLineArray) => {
         newAst.program.body.splice(lastImportIndex+1,0,...mockVariablesAST);
         
         const astCodeNew = generator.default(newAst).code;
-        console.log("Before\n", astCodeOld, '\n\n\n\nafter\n', astCodeNew);
-        // fs.writeFile(`./${fileName}`, astCodeNew, (err) => {
-        //   if (err) createUnparsedSourceFile.log("Error: ", err);
-        //   else console.log("Written successfully!");
-        // })
+        //console.log("Before\n", astCodeOld, '\n\n\n\nafter\n', astCodeNew);
+        fs.writeFile(`./${fileName}`, astCodeNew, (err) => {
+          if (err) createUnparsedSourceFile.log("Error: ", err);
+          else console.log("Written successfully!");
+        })
         
       });
   });
