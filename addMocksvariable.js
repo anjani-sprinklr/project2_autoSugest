@@ -3,8 +3,10 @@ import parser from "@babel/parser";
 import generator from "@babel/generator";
 import fs from 'fs';
 
+
 const testNameMapstoMockVariableName = new Map();
 const mockvariableArr = new Array();
+const mockvariableArrIfLineNumber = new Map();
 const singleMockVariablearr = new Array();
 
 const mocksAttribute = (varName) => {
@@ -151,28 +153,20 @@ const getPrevTest = (line, testAndLineArray) => {
 
 const createMockVariables = (map) => {
 
-  let currentCountofMocks = 2;
+  // let currentCountofMocks = 1;
 
   for (const [key, lines] of map) {
 
-    let currentSubCountofMocks = 1;
+   // let currentSubCountofMocks = 1;
     const queryName = key.split('$#')[0];
     const variables = key.split('$#')[1];
 
-    if (lines.length > 1) {
-
-      for (let line of lines) {
-        const mockVariableName = 'MOCKS' + currentCountofMocks +'_'+ currentSubCountofMocks;
-        mockvariableArr.push([mockVariableName, queryName, variables]);
-        currentSubCountofMocks += 1;
-      }
-
-      currentCountofMocks += 1;
-
-    } else {
-        singleMockVariablearr.push([queryName, variables]);
-      
+    for (let cur = 0; cur < lines; cur++){
+      // const mockVariableName = 'MOCKS';
+      mockvariableArr.push([queryName, variables]);
+     // currentCountofMocks += 1;
     }
+   
   }
 
   return
@@ -180,8 +174,8 @@ const createMockVariables = (map) => {
 
 const createMapofTestNametoVariableName = (map, testAndLineArray) => {
   
-  let currentCountofMocks = 2;
-  
+ // let currentCountofMocks = 2;
+ //  let count={}
   for (const [key, lines] of map) {
 
     let currentSubCountofMocks = 1;
@@ -195,23 +189,51 @@ const createMapofTestNametoVariableName = (map, testAndLineArray) => {
         const testName =   getPrevTest(line, testAndLineArray);
         if (testName) {
 
-          const mockVariableName = 'MOCKS' + currentCountofMocks +'_'+ currentSubCountofMocks;
-          testNameMapstoMockVariableName.set(testName[1],mockVariableName );
-          mockvariableArr.push([mockVariableName, queryName, variables]);
-          currentSubCountofMocks += 1;
+          const mockVariableName = 'MOCKS_' + line;
+          testNameMapstoMockVariableName.set(testName[1], mockVariableName);
+          if (mockvariableArrIfLineNumber.has(mockVariableName)) {
+            mockvariableArrIfLineNumber.get(mockVariableName).push([queryName, variables]);
+          } else {
+            mockvariableArrIfLineNumber.set(mockVariableName, [[queryName, variables]]);
+          }
+          
+          //currentSubCountofMocks += 1;
 
+        } else {
+          // if (count[line]) {
+          //   count[line] += 1;
+          // } else {
+          //   count[line] = 1;
+          // }
+          //const mockVariableName = 'MOCKS_' + line + '_' + count[line];
+          mockvariableArr.push([queryName, variables]);
         }
 
       }
 
-      currentCountofMocks += 1;
+      //currentCountofMocks += 1;
 
     } else {
 
       const testName =  getPrevTest(lines[0],testAndLineArray);
       if (testName) {
-        testNameMapstoMockVariableName.set(testName[1], 'MOCKS1');
-        singleMockVariablearr.push([queryName, variables]);
+        const mockVariableName = 'MOCKS_' + lines[0];
+        if (mockvariableArrIfLineNumber.has(mockVariableName)) {
+          mockvariableArrIfLineNumber.get(mockVariableName).push([queryName, variables]);
+        } else {
+          testNameMapstoMockVariableName.set(testName[1], 'MOCKS1');
+          singleMockVariablearr.push([queryName, variables]);
+        }
+     
+      } else {
+        // const line = lines[0];
+        // if (count[line]) {
+        //   count[line] += 1;
+        // } else {
+        //   count[line] = 1;
+        // }
+        // const mockVariableName = 'MOCKS_' + line + '_' + count[line];
+        mockvariableArr.push([queryName, variables]);
       }
 
     }
@@ -220,92 +242,115 @@ const createMapofTestNametoVariableName = (map, testAndLineArray) => {
   return
 
 }
-
-const getAST
-  = (type) => {
+const getMockVariables = () => {
 
   let content = "";
+  
+  const contentArray = mockvariableArr.map((payload) => {
+    
+    return (
+      `{
+        request: {
+          query: ${payload[0]},
+          variables: ${payload[1]}
+        },
+        result: {
+          data: {}
+        }
+      }`
+    );
+    
+  });
+  
+  if (mockvariableArr.length !== 0) {
+    content = `const MOCKS=[${contentArray}];\n`;
+    content = '\n\n/*' + content + '*/';
+  }
+  
+  return content;
 
-  mockvariableArr.forEach((payload) => {
-    content += `const ${payload[0]}=[{
-      request: {
-          query: ${payload[1]},
-          variables: ${payload[2]}
-      },
-      result: {
-          data: {
-              
+
+}
+const getAST = () => {
+  let content = "";
+
+  mockvariableArrIfLineNumber.forEach((queries, key, mapvar) => {
+    const queriesInArray = queries.map((payload) => {
+      return (
+        `{
+          request: {
+            query: ${payload[0]},
+            variables: ${payload[1]}
+          },
+          result: {
+            data: {}
           }
-      }
-    }];\n `
+        }`
+      )
+    });
+    content += `const ${key} = [${queriesInArray}];\n`;
   });
 
-  // variables which are all different from one another
+  // Variables which are all different from one another
   if (singleMockVariablearr.length > 0) {
-
     const samemockVaribaleNameContent = singleMockVariablearr.map((payload) => {
       return (
         `{
-                  request: {
-                      query: ${payload[0]},
-                      variables: ${payload[1]}
-                  },
-                  result: {
-                      data: {
-                          
-                      }
-                  }
-              }`
-      );
-        
+          request: {
+            query: ${payload[0]},
+            variables: ${payload[1]}
+          },
+          result: {
+            data: {}
+          }
+        }`
+      )
     });
-    content += `const MOCKS1=[${samemockVaribaleNameContent}];\n `;
-
+    content += `const MOCKS1 = [${samemockVaribaleNameContent}];\n`;
   }
+  // Log the content to debug
+  // console.log("Generated Content:", content);
 
-  if (type === 2) {
-    content = '\n /*' + content + '*/';
-    return content;
+  try {
+    const vardeclareAst = parser.parse(content, {
+      sourceType: 'module',
+      plugins: ['jsx', 'typescript']
+    });
+    const varAST = vardeclareAst.program.body;
+    return varAST;
+  } catch (error) {
+    // console.error("Parsing error:", error.message);
+    throw error;
   }
+};
 
-  const vardeclareAst = parser.parse(content, {
-    sourceType: 'module',
-    plugins: ['jsx']
-  });
-  const varAST = vardeclareAst.program.body;
-
-  return varAST;
-
-}
-
-const addMocksvariable =  (map, fileName, testAndLineArray,type) => {
+const addMocksvariable =  (mapWithLineNumber,mapWithoutLineNumber, filePath, testAndLineArray,isLineNumberPresent) => {
   
   resetVariables();
-
   // type 2 : only Debug;
   // type 1 : Debug +Fix
 
-  if (type === 2) {
+  if (testAndLineArray === null || !isLineNumberPresent) {
     // creating Mock variables
-    createMockVariables(map);
+    createMockVariables(mapWithoutLineNumber);
 
-    if (mockvariableArr.length || singleMockVariablearr) {
-      const content = getAST(type);
-      console.log(mockvariableArr.length, singleMockVariablearr.length);
-      console.log(fileName);
-      fs.appendFileSync(`./${fileName}`, content);
+    if (mockvariableArr.length) {
+      const content = getMockVariables();
+      //console.log(filePath);
+      fs.appendFileSync(`${filePath}`, content);
     }
 
   } else {
-
+    //console.log("map of tst names to var");
     // creating a Map of Testnames and Mock variables
-    createMapofTestNametoVariableName(map, testAndLineArray);
-
+    createMapofTestNametoVariableName(mapWithLineNumber, testAndLineArray);
+    createMockVariables(mapWithoutLineNumber);
+    //console.log("callling getast");
     // generating the AST of the Mock variables
-    const mockVariablesAST = getAST(type);
-
+    const mockVariablesAST = getAST();
+    //console.log("reading file");
     // reading the file
-    const data = fs.readFileSync(`./${fileName}`, 'utf-8');
+    const data = fs.readFileSync(`${filePath}`, 'utf-8');
     const ast = parser.parse(data, {
       sourceType: "module",
       plugins: ["jsx"]
@@ -329,7 +374,8 @@ const addMocksvariable =  (map, fileName, testAndLineArray,type) => {
     const astCodeNew = generator.default(newAst).code;
     
     // writing the modifed code to the file
-    fs.writeFileSync(`./${fileName}`, astCodeNew);
+    fs.writeFileSync(`${filePath}`, astCodeNew);
+    fs.appendFileSync(`${filePath}`, getMockVariables());
 
   }
   

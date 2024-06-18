@@ -1,35 +1,49 @@
 import { spawn } from 'node:child_process';
 import ExtractContentFromOutputFile from '../ExtractContentFromOutputFile.js';
-
+import path from 'path';
 const args = process.argv.slice(2);
-const arr = ['npx','jest'];
+const arr = ['npx','jest','--silent=false'];
 
 const hasDebug = args.includes('debug');
-const hasFix = args.includes('--fix');
+
+let testFailed = false;
 
 arr.push(args.filter((element) => {
-  if (element !== 'debug' && element !== '--fix') return element;
+  if (element !== 'debug') return element;
 }));
-if (hasDebug) arr.push('| tee output.txt');
+
+//if (hasDebug) arr.push('| tee output.txt');
 
 const ps = spawn('unbuffer', arr, { shell: true });
 
 ps.stdout.on('data', (data) => {
-    console.log(data.toString());
+  const output = data.toString();
+  console.log(output);
+  if (output.includes('FAIL') || output.includes('failed')) testFailed = true;
 });
 
 ps.stderr.on('data', (data) => {
-  console.error(`ps stderr: ${data}`);
+  console.error(`STDERR****: ${data}`);
 });
 
-ps.on('close', (code) => {
-  if (hasDebug && hasFix) {
-    ExtractContentFromOutputFile(1);
-  } else if (hasDebug) {
-    ExtractContentFromOutputFile(2);
-  }
+const filePath = args[0];
 
+const currentWorkingDirectory = process.cwd();
+const resolvedFilePath = path.isAbsolute(filePath)? filePath: path.resolve(currentWorkingDirectory, filePath);
+
+ps.on('close', (code) => {
+  if (hasDebug || testFailed) {
+    ExtractContentFromOutputFile(resolvedFilePath);
+    console.log('**Done!** ')
+  }
 });
 
 ps.on('error', (err) => {
+  console.error(`ERROR ****: ${data}`);
 });
+
+/**
+ * 1. write on file name provided by user
+ * 2. catch and find mocks even if test fails
+ * 3. write comments if line number if not
+ */

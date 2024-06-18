@@ -4,7 +4,7 @@
 
 
 import "@testing-library/jest-dom";
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { MockedProvider } from "@apollo/client/testing";
 import { Dog } from "./dog";
 
@@ -49,7 +49,7 @@ test("renders without error second 2", async () => {
     </MockedProvider>
    
   );
- // expect(screen.getByText("Loading...")).toBeInTheDocument();
+  expect(screen.getByText("kjkjkjkj...")).toBeInTheDocument();
 });
 
 

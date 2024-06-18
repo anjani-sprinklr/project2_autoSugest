@@ -38,7 +38,7 @@ export function Dog({ name,name2,name3,name4,name5 }:{name:string,name2:string,n
     variables: { name,name2,name3,name4,name5 }
   });
   //const { loading2,data2} = useCustomHook("name2");
-  const { loading2,data2} = useCustomHook("Buck","Buck2","buck3","Buck4","Buck5" );
+  const { loading2,data2} = useCustomHook(name,"Buck2","buck3","Buck4",name5);
   if (loading || loading2) return <p>Loading...</p>;
  // if (loading) return <p>Loading...</p>;
   if (error) return <p>{error.message}</p>;

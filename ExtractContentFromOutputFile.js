@@ -4,11 +4,12 @@ import addMocksvariable from './addMocksvariable.js';
 
 
 const regexASNI= /\u001b\[\d+m/g;
-const regex = /No more mocked responses((.|\n)*?)Expected variables:((.|\n)*?)at Object.<anonymous> \(((.|\n)*?)\n/gm;
+const regex = /No more mocked responses((.|\n)*?)Expected variables:((.|\n)*?)at MockLink.Object.<anonymous>/gm;
+
 const testRegex = /^(?!.*\/\/)(?!.*\/\*).*test\(("|')([^\1]+?)(\1)/gm
 
-function scanTestAndLineNumberFromFile(fileName, callback) {
-    const fileStream = fs.createReadStream(fileName);
+function scanTestAndLineNumberFromFile(filePath, callback) {
+    const fileStream = fs.createReadStream(filePath);
     const rl = readline.createInterface({
         input: fileStream,
         output: process.stdout,
@@ -37,13 +38,14 @@ function scanTestAndLineNumberFromFile(fileName, callback) {
 }
 
 
-const ExtractContentFromOutputFile = (type) => {
-
+const ExtractContentFromOutputFile = (filePath) => {
+    var isLineNumberPresent = false;
     const data = fs.readFileSync('output.txt', 'utf-8');
     let str = data.toString();
     str = str.replace(regexASNI, '');
     let match = "";
-    const map = new Map();
+    const mapWithLineNumber = new Map();
+    const mapWithoutLineNumber = new Map();
     let lastLineinserted = -1;
     
 
@@ -51,7 +53,7 @@ const ExtractContentFromOutputFile = (type) => {
     
         const group1 = match[1];
         const group2 = match[3];
-        const group3 = match[5];
+        //const group3 = match[5];
 
         // regex manipulation to get required contents
         let query = group1.split(' for the query:')[1].trim();
@@ -61,47 +63,60 @@ const ExtractContentFromOutputFile = (type) => {
         constVariable =constVariable.concat("_QUERY").toUpperCase();
         const splitArray = group2.split('This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable');
         const variables = splitArray[0].trim();
-        const regexRender = />(.*)render\(/gm;
-        const lineNumberAndNoise = regexRender.exec(splitArray[1])[1].trim();
-        const lineNumber = lineNumberAndNoise.split(' ')[0];
+        //console.log(variables);
+        
         const queryVariable = constVariable + '$#' + variables;
-        let fileName = group3.split(':')[0].trim();
 
-        // accounting for duplicate warnings at same line number
-        if (lastLineinserted === lineNumber) continue;
+        const regexRender = />(.*)render\(/gm;
+        let match3=""
+        if ((match3=regexRender.exec(splitArray[1]) )!== null) {
+            // console.log(splitArray[1]);
+            const lineNumberAndNoise = match3[1].trim();
+            const lineNumber = lineNumberAndNoise.split(' ')[0];
+            isLineNumberPresent = true;
 
-        // creating a map for per file and per Query_varibales
-        if (map.has(fileName)) {
-            const mapQueryVaribles = map.get(fileName);
-            if (mapQueryVaribles.has(queryVariable)) {
-                (map.get(fileName)).get(queryVariable).push(lineNumber);
+            if (mapWithLineNumber.has(queryVariable)) {
+                (mapWithLineNumber).get(queryVariable).push(lineNumber);
             } else {
-                map.get(fileName).set(queryVariable, [lineNumber]);
+                mapWithLineNumber.set(queryVariable, [lineNumber]);
             }
+            
         } else {
-            const mapQueryVaribles = new Map();
-            mapQueryVaribles.set(queryVariable, [lineNumber]);
-            map.set(fileName, mapQueryVaribles);
+            // if Line Number not present then I am storing the frequency
+           
+            const count = mapWithoutLineNumber.get(queryVariable);
+            if (count) {
+                mapWithoutLineNumber.set(queryVariable, count+1);
+            } else {
+                mapWithoutLineNumber.set(queryVariable,  1);
+            }
         }
-
-        lastLineinserted = lineNumber;
     
     
     }
 
-    // autoSuggestion of payload per file
-    map.forEach((value, key, mapvar) => {
 
-        if (type === 1) {
-            // reading the file for Test name and Line number
-            scanTestAndLineNumberFromFile(`./${key}`, (err, testAndLineArray) => {
-                addMocksvariable(value, key, testAndLineArray, type);
-            });
-        } else {
-            addMocksvariable(value, key, null, type);
-        }
+    if (isLineNumberPresent) {
+        scanTestAndLineNumberFromFile(`${filePath}`, (err, testAndLineArray) => {
+            addMocksvariable(mapWithLineNumber, mapWithoutLineNumber,filePath, testAndLineArray, isLineNumberPresent);
+        });
+    } else {
+        addMocksvariable(mapWithLineNumber, mapWithoutLineNumber, filePath, null, isLineNumberPresent);
+    }
+
+    
+    // // autoSuggestion of payload per file
+    // mapWithLineNumber.forEach((value, filePath, mapvar) => {
+
+    //     if (isLineNumberPresent) {
+    //         // reading the file for Test name and Line number
+    //         //console.log("Inside map",map);
+           
+    //     } else {
+    //         addMocksvariable(value,mapWithoutLineNumber filePath, null, isLineNumberPresent);
+    //     }
        
-    });
+    // });
 
 }
 
