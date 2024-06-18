@@ -1,42 +1,51 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable no-control-regex */
 
-import fs, { chownSync } from 'fs';
+import readline from 'readline';
+import fs from 'fs';
 import addMocksvariable from './test2.js';
-import { open } from 'node:fs/promises';
 
 const regexASNI= /\u001b\[\d+m/g;
 
+function scanTestAndLineNumberFromFile(fileName, callback) {
+    const fileStream = fs.createReadStream(fileName);
+    const rl = readline.createInterface({
+        input: fileStream,
+        output: process.stdout,
+        terminal: false
+    });
 
-
-const elements = [];
-
-
-async function scanTestAndLineNumberFromFile(fileName) {
-    const file = await open(fileName);
-    const testAndLineArray = new Array();
-    const testRegex = /^(?!.*\/\/)(?!.*\/\*).*test\(("|')([^\1)]+)\1/gm;
+    const testAndLineArray = [];
+    const testRegex = /^(?!.*\/\/)(?!.*\/\*).*test\(("|')([^\1]+?)(\1)/gm
     let lineNumber = 1;
-    for await (const line of file.readLines()) {
-        // read the 1st argumnet of test, that is test name, if its not commented
+
+    rl.on('line', (line) => {
         const isTestFound = testRegex.exec(line);
-        if (isTestFound!=null) {
+        if (isTestFound != null) {
             testAndLineArray.push({ line: lineNumber, test: isTestFound[2] });
-          //  console.log(isTestFound);
         }
         lineNumber++;
-    }
-    return testAndLineArray;
+    });
+
+    rl.on('close', () => {
+        callback(null, testAndLineArray);
+    });
+
+    rl.on('error', (error) => {
+        callback(error, null);
+    });
 }
 
-fs.readFile('output.txt', 'utf-8',async (err, data) => {
-    if (err) console.log(err);
+
+
+
+
+const ExtractContentFromOutputFile = (type) => {
+    const data = fs.readFileSync('output.txt', 'utf-8');
     let str = data.toString();
     str = str.replace(regexASNI, '');
-  
-
     const regex = /No more mocked responses((.|\n)*?)Expected variables:((.|\n)*?)at Object.<anonymous> \(((.|\n)*?)\n/gm;
-   
+    
     let match = "";
     const map = new Map();
     let lastLineinserted = -1;
@@ -59,7 +68,9 @@ fs.readFile('output.txt', 'utf-8',async (err, data) => {
         //console.log(lineNumber);
         const queryVariable = constVariable + '$#' + variables;
         let fileName = group3.split(':')[0].trim();
+
         if (lastLineinserted === lineNumber) continue;
+
         if (map.has(fileName)) {
             const mapQueryVaribles = map.get(fileName);
             if (mapQueryVaribles.has(queryVariable)) {
@@ -72,53 +83,24 @@ fs.readFile('output.txt', 'utf-8',async (err, data) => {
             mapQueryVaribles.set(queryVariable, [lineNumber]);
             map.set(fileName, mapQueryVaribles);
         }
+
         lastLineinserted = lineNumber;
     
     
     }
     //console.log(map);
+   // console.log(map)
+    map.forEach((value, key, mapvar) => {
 
+        console.log(value);
+        scanTestAndLineNumberFromFile(`./${key}`, (err, testAndLineArray) => {
+            addMocksvariable(value, key, testAndLineArray,type);
+        })
+    });
 
-    let run = 0;
-    for (const [key, data] of map) {
-        let arr = [];
-        const testAndLineArray=await scanTestAndLineNumberFromFile(`./${key}`);
-        //console.log(testAndLineArray);
-        // data.forEach((payload) => {
-        //    //console.log(payload);
-        //    // const gqldata = 'gql'+`${payload[0]}`;
-        //     arr.push(`{
-        //         request: {
-        //             query: ${payload[1]},
-        //             variables: ${payload[2]}
-        //         },
-        //         result: {
-        //             data: {
-                        
-        //             }
-        //         }
-        //     }`);
-        // });
-           
-        //const mocksVariable = `const MOCKS=[${arr}]`;
-        await addMocksvariable(data,key,testAndLineArray);
-        run++;
-        // fs.appendFile(`./${key}`, '\n'+content, (err) => {
-        //     if (err) console.log(err);
-        //     else console.log("Done appending")
-        // })
-       //console.log(content);
-    }
+}
 
-
-
-
-
-});
-
-
-
-
+export default ExtractContentFromOutputFile;
 
 
 
