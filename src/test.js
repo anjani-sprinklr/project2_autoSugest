@@ -23,11 +23,11 @@ ps.stderr.on('data', (data) => {
 });
 
 ps.on('close', (code) => {
-if (hasDebug && hasFix) {
-  ExtractContentFromOutputFile(1);
-} else if (hasDebug) {
-  ExtractContentFromOutputFile(2);
-}
+  if (hasDebug && hasFix) {
+    ExtractContentFromOutputFile(1);
+  } else if (hasDebug) {
+    ExtractContentFromOutputFile(2);
+  }
 
 });
 
