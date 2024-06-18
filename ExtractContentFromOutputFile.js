@@ -1,11 +1,11 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable no-control-regex */
-
 import readline from 'readline';
 import fs from 'fs';
-import addMocksvariable from './test2.js';
+import addMocksvariable from './addMocksvariable.js';
+
 
 const regexASNI= /\u001b\[\d+m/g;
+const regex = /No more mocked responses((.|\n)*?)Expected variables:((.|\n)*?)at Object.<anonymous> \(((.|\n)*?)\n/gm;
+const testRegex = /^(?!.*\/\/)(?!.*\/\*).*test\(("|')([^\1]+?)(\1)/gm
 
 function scanTestAndLineNumberFromFile(fileName, callback) {
     const fileStream = fs.createReadStream(fileName);
@@ -14,10 +14,10 @@ function scanTestAndLineNumberFromFile(fileName, callback) {
         output: process.stdout,
         terminal: false
     });
-
     const testAndLineArray = [];
-    const testRegex = /^(?!.*\/\/)(?!.*\/\*).*test\(("|')([^\1]+?)(\1)/gm
+    
     let lineNumber = 1;
+
 
     rl.on('line', (line) => {
         const isTestFound = testRegex.exec(line);
@@ -37,40 +37,40 @@ function scanTestAndLineNumberFromFile(fileName, callback) {
 }
 
 
-
-
-
 const ExtractContentFromOutputFile = (type) => {
+
     const data = fs.readFileSync('output.txt', 'utf-8');
     let str = data.toString();
     str = str.replace(regexASNI, '');
-    const regex = /No more mocked responses((.|\n)*?)Expected variables:((.|\n)*?)at Object.<anonymous> \(((.|\n)*?)\n/gm;
-    
     let match = "";
     const map = new Map();
     let lastLineinserted = -1;
+    
+
     while ((match = regex.exec(str)) !== null) {
     
         const group1 = match[1];
         const group2 = match[3];
         const group3 = match[5];
+
+        // regex manipulation to get required contents
         let query = group1.split(' for the query:')[1].trim();
         let queryName = query.split('(')[0].split(' ')[1];
-
         const constVariableArray = queryName.match(/[A-z][a-z]+/g);
         let constVariable = constVariableArray.join("_");
         constVariable =constVariable.concat("_QUERY").toUpperCase();
         const splitArray = group2.split('This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable');
         const variables = splitArray[0].trim();
         const regexRender = />(.*)render\(/gm;
-        const lineNumberAndNise = regexRender.exec(splitArray[1])[1].trim();
-        const lineNumber = lineNumberAndNise.split(' ')[0];
-        //console.log(lineNumber);
+        const lineNumberAndNoise = regexRender.exec(splitArray[1])[1].trim();
+        const lineNumber = lineNumberAndNoise.split(' ')[0];
         const queryVariable = constVariable + '$#' + variables;
         let fileName = group3.split(':')[0].trim();
 
+        // accounting for duplicate warnings at same line number
         if (lastLineinserted === lineNumber) continue;
 
+        // creating a map for per file and per Query_varibales
         if (map.has(fileName)) {
             const mapQueryVaribles = map.get(fileName);
             if (mapQueryVaribles.has(queryVariable)) {
@@ -88,14 +88,19 @@ const ExtractContentFromOutputFile = (type) => {
     
     
     }
-    //console.log(map);
-   // console.log(map)
+
+    // autoSuggestion of payload per file
     map.forEach((value, key, mapvar) => {
 
-        console.log(value);
-        scanTestAndLineNumberFromFile(`./${key}`, (err, testAndLineArray) => {
-            addMocksvariable(value, key, testAndLineArray,type);
-        })
+        if (type === 1) {
+            // reading the file for Test name and Line number
+            scanTestAndLineNumberFromFile(`./${key}`, (err, testAndLineArray) => {
+                addMocksvariable(value, key, testAndLineArray, type);
+            });
+        } else {
+            addMocksvariable(value, key, null, type);
+        }
+       
     });
 
 }
