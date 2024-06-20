@@ -6,7 +6,8 @@
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import { MockedProvider } from "@apollo/client/testing";
-import { Dog } from "./dog";
+import { Dog, GET_DOG_QUERY } from "./dog";
+import { GET_LOCATIONS_QUERY } from "./useCustomHook";
 
 //react
 
@@ -27,6 +28,46 @@ const setup=() => {
   )
 }
 
+const MOCKS_14 = [{
+  request: {
+    query: GET_DOG_QUERY,
+    variables: {
+      "name": "Buck",
+      "name2": "Buck2",
+      "name3": "buck3",
+      "name4": "Buck4",
+      "name5": "Buck5"
+    }
+  },
+  result: {
+    data: {}
+  }
+}];
+
+test("renders without error second 1000", async () => {
+  render(<MockedProvider mocks={MOCKS_14} addTypename={false}>
+      <Dog name="Buck" name2="Buck2" name3="buck3" name4="Buck4" name5="Buck5" />
+    </MockedProvider>);
+  // expect(screen.getByText("Loading...")).toBeInTheDocument();
+});
+test("renders without error second 2000", async () => {
+  render(<MockedProvider mocks={
+    [{
+      request: {
+        query: GET_LOCATIONS_QUERY,
+        variables: {
+          "name": "name2"
+        }
+      },
+      result: {
+        data: {}
+      }
+    }]
+  } addTypename={false}>
+      <Dog name="Buck" name2="Buck2" name3="buck3" name4="Buck4" name5="Buck5" />
+    </MockedProvider>);
+  // expect(screen.getByText("Loading...")).toBeInTheDocument();
+});
 
 test("renders without error second", async () => {
   

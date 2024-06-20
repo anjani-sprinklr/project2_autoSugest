@@ -12,7 +12,7 @@ arr.push(args.filter((element) => {
   if (element !== 'debug') return element;
 }));
 
-//if (hasDebug) arr.push('| tee output.txt');
+if (hasDebug) arr.push('| tee output.txt');
 
 const ps = spawn('unbuffer', arr, { shell: true });
 
@@ -47,3 +47,13 @@ ps.on('error', (err) => {
  * 2. catch and find mocks even if test fails
  * 3. write comments if line number if not
  */
+
+// [ ]
+// MCOKS append
+// dusri files se lekr ana
+// relative path
+// mockProvider as Apolo handle alisaing as well
+
+
+// assumptions that import for variable sis from 'import'
+// and a single array is avoided
