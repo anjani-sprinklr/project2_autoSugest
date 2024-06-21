@@ -7,7 +7,7 @@ const arr = ['npx','jest','--silent=false'];
 const hasDebug = args.includes('debug');
 
 let testFailed = false;
-
+//console.log(args);
 arr.push(args.filter((element) => {
   if (element !== 'debug') return element;
 }));
@@ -48,12 +48,13 @@ ps.on('error', (err) => {
  * 3. write comments if line number if not
  */
 
-// [ ]
-// MCOKS append
-// dusri files se lekr ana
-// relative path
-// mockProvider as Apolo handle alisaing as well
-
+/* 
+* appending in the mocks attribute itself
+* appending to already existing Mocks variable
+* if its imported from other filer then put it down as a comment
+* cli command should work with relative path as well
+* cover the case of aliasing as well
+*/
 
 // assumptions that import for variable sis from 'import'
 // and a single array is avoided

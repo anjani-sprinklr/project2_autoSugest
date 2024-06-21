@@ -69,7 +69,9 @@ function extractASTNodes(ast) {
     traverse.default(ast, {
       VariableDeclaration(path) {
         path.node.declarations.forEach((node) => {
-          if(node.id.name)
+          if (node.id.name) {
+            
+          }
         });
       }
     });
