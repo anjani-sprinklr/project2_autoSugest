@@ -6,7 +6,7 @@ import addMocksvariable from './addMocksvariable.js';
 const regexASNI= /\u001b\[\d+m/g;
 const regex = /No more mocked responses((?:.|\n)*?)Expected variables:((?:.|\n)*?)(at (?:.|\n)*?at Object\.<anonymous> .*)\n/gm;
 
-const testRegex = /^(?!.*\/\/)(?!.*\/\*).*test\(("|')([^\1]+?)(\1)/gm
+const testRegex = /^(?!.*\/\/)(?!.*\/\*).*(?:test|it)\(("|')([^\1]+?)(\1)/gm
 
 function scanTestAndLineNumberFromFile(filePath, callback) {
     const fileStream = fs.createReadStream(filePath);

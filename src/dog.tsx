@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { gql, useQuery } from "@apollo/client";
 import useCustomHook from "./useCustomHook";
-
+import React from "react";
 // Make sure that both the query and the component are exported
 // eslint-disable-next-line react-refresh/only-export-components
 

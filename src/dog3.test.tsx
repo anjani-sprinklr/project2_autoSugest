@@ -5,23 +5,23 @@ import { Dog } from "./dog";
 import { MockedProvider } from "@apollo/client/testing";
 
 // const mocks = [
-//   {
-//     request: {
-//       query: GET_DOG_QUERY,
-//       variables: {
-//           name: "Buck",
-//           name2: "Buck2",
-//           name3: "buck3",
-//           name4: "Buck4",
-//           name5:"Buck5"
+  // {
+  //   request: {
+  //     query: GET_DOG_QUERY,
+  //     variables: {
+  //         name: "Buck",
+  //         name2: "Buck2",
+  //         name3: "buck3",
+  //         name4: "Buck4",
+  //         name5:"Buck5"
 
-//       }
-//     },
-//     result: {
-//       data: {
-//       }
-//     }
-//   }
+  //     }
+  //   },
+  //   result: {
+  //     data: {
+  //     }
+  //   }
+  // }
 // ];
 
 const setup = () => {

@@ -1,26 +1,28 @@
 {
-  "compilerOptions": {
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "types": ["jest", "@testing-library/jest-dom"],
-    "skipLibCheck": true,
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "esModuleInterop":true,
-
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
-  },
-  "include": ["src", "src/dog3.test.tsx"],
-  "references": [{ "path": "./tsconfig.node.json" }]
-}
+    "compilerOptions": {
+      "target": "ES5",
+        // Ensure that .d.ts files are created by tsc, but not .js files
+      "declaration": true,
+      "emitDeclarationOnly": true,
+  // Ensure that Babel can safely transpile files in the TypeScript project
+      "isolatedModules": true,
+      "useDefineForClassFields": true,
+      "lib": ["ES2020", "DOM", "DOM.Iterable"],
+      "module": "ESNext",
+      "types": ["jest", "@testing-library/jest-dom"],
+      "skipLibCheck": true,
+      /* Bundler mode */
+      "moduleResolution": "bundler",
+      "allowImportingTsExtensions": true,
+      "resolveJsonModule": true,
+      "jsx": "react-jsx",
+      "esModuleInterop":true,
+  
+      /* Linting */
+      "strict": true,
+      "noFallthroughCasesInSwitch": true
+    },
+    "include": ["src"],
+    "references": [{ "path": "./tsconfig.node.json" }]
+  }
+  

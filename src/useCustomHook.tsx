@@ -17,14 +17,16 @@ type dataType = {
     id: string,
     name: string,
     breed:string
-  }
+}
+
 type CustomType={
     loading2: boolean,
     error2: undefined |Error|null,
     data2: {
         dog: dataType
     }
-  }
+}
+  
 const useCustomHook = (name:string) : CustomType => {
     const { loading, data } = useQuery(GET_LOCATIONS_QUERY, {
         variables: { name }

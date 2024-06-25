@@ -10,7 +10,8 @@ const mockvariableArrIfLineNumber = new Map();
 const singleMockVariablearr = new Array();
 const existingMockVariable_MapsTo_createdVariable = new Map();
 
-let aliasNameForMockProvider = null;
+let aliasNameForMockProvider = "MockedProvider";
+let aliasNameForRender = "render";
 
 const mocksAttribute = (varName) => {
   return ({
@@ -63,7 +64,7 @@ function findMockProvider(node, mockVariableName) {
   // base case
   if (node.type === "JSXElement" &&
     node.openingElement.type === "JSXOpeningElement" &&
-    (node.openingElement.name.name === "MockedProvider" || node.openingElement.name.name === aliasNameForMockProvider)) {
+    (node.openingElement?.name?.name === aliasNameForMockProvider)) {
     
     let isMockPresent = false;
 
@@ -73,8 +74,8 @@ function findMockProvider(node, mockVariableName) {
       if (jsxAttribute.name.name === "mocks") {
         isMockPresent = true;
         //const jsxAttribute.value = jsxAttribute.value;
-        if (jsxAttribute.value.expression.type === "ArrayExpression") {
-          if (jsxAttribute.value.expression.elements.length === 0) {
+        if (jsxAttribute.value?.expression.type === "ArrayExpression") {
+          if (jsxAttribute.value?.expression.elements.length === 0) {
             // console.log("inside length 0");
             jsxAttribute.value =  mocksAttribute(mockVariableName).value;
           } else {
@@ -128,61 +129,67 @@ function findMockProvider(node, mockVariableName) {
 function resetVariables() {
    
   testNameMapstoMockVariableName.clear(); 
-  mockvariableArr.length = 0; 
-  singleMockVariablearr.length = 0; 
   existingMockVariable_MapsTo_createdVariable.clear();
   mockvariableArrIfLineNumber.clear();
-  aliasNameForMockProvider = null;
+  mockvariableArr.length = 0; 
+  singleMockVariablearr.length = 0; 
+ 
+
+  aliasNameForMockProvider = "MockedProvider";
+  aliasNameForRender = "render";
  
 }
 
 
 const addMocksAttribute = (ast) => {
+  traverse.default(ast, {
+    CallExpression(path) {
+      const node = path.node;
+      if (//node &&
+       // node.callee &&
+        (node?.callee?.name === "test" || node?.callee?.name==="it" )&&
+        node.arguments.length>1
+      ) {
+        const insideTest = node.arguments[1].body.body;
+        if (insideTest) {
   
-  const astBody = ast.program.body.map(node => {
-
-    const newNode = node;
-    if (node.expression && node.expression.callee.name === "test") {
-
-      const insideTest = node.expression.arguments[1].body.body;
-      if (insideTest) {
-
-        const insideTestNodesArray = insideTest.map((node_insideTest) => {
-          
-          const newNode_insideTest = node_insideTest;
-          if (node_insideTest.expression.callee.name === "render") {
-
-            const insideRender = node_insideTest.expression.arguments;
-            if (insideRender.length) {
-
-              const insideRenderNodeArray = insideRender.map((jsxElement) => {
-                
-                const testName = node.expression.arguments[0].extra.rawValue;
-                if (testNameMapstoMockVariableName.has(testName)) {
-                  return  findMockProvider(jsxElement,testNameMapstoMockVariableName.get(testName));
-                }
-
-                return jsxElement;
-                
-              });
-              newNode_insideTest.expression.arguments = insideRenderNodeArray;
+          const insideTestNodesArray = insideTest.map((node_insideTest) => {
+            
+            const newNode_insideTest = node_insideTest;
+            if (node_insideTest &&
+             // node_insideTest.expression &&
+             // node_insideTest.expression.callee &&
+              node_insideTest?.expression?.callee?.name === aliasNameForRender) {
+  
+              const insideRender = node_insideTest.expression.arguments;
+              if (insideRender.length) {
+  
+                const insideRenderNodeArray = insideRender.map((jsxElement) => {
+                  
+                  const testName = node.arguments[0].extra.rawValue;
+                  if (testNameMapstoMockVariableName.has(testName)) {
+                    return  findMockProvider(jsxElement,testNameMapstoMockVariableName.get(testName));
+                  }
+  
+                  return jsxElement;
+                  
+                });
+                newNode_insideTest.expression.arguments = insideRenderNodeArray;
+              }
             }
-          }
+  
+            return newNode_insideTest;
+          });
+  
+          node.arguments[1].body.body = insideTestNodesArray;
 
-          return newNode_insideTest;
-        });
-
-        newNode.expression.arguments[1].body.body = insideTestNodesArray;
+        }
+        path.node = node;
       }
     }
-  
-    return newNode;
   });
-  
-  const newAST = ast;
-  newAST.program.body = astBody;
 
-  return newAST;
+  return ast;
 }
 
 
@@ -265,32 +272,6 @@ const createMapofTestNametoVariableName = (map, testAndLineArray) => {
 
       }
 
-      //currentCountofMocks += 1;
-
-    // } else {
-
-    //   const testName =  getPrevTest(lines[0],testAndLineArray);
-    //   if (testName) {
-    //     const mockVariableName = 'MOCKS_' + lines[0];
-    //     if (mockvariableArrIfLineNumber.has(mockVariableName)) {
-    //       mockvariableArrIfLineNumber.get(mockVariableName).push([queryName, variables]);
-    //     } else {
-    //       testNameMapstoMockVariableName.set(testName[1], 'MOCKS1');
-    //       singleMockVariablearr.push([queryName, variables]);
-    //     }
-     
-    //   } else {
-    //     // const line = lines[0];
-    //     // if (count[line]) {
-    //     //   count[line] += 1;
-    //     // } else {
-    //     //   count[line] = 1;
-    //     // }
-    //     // const mockVariableName = 'MOCKS_' + line + '_' + count[line];
-    //     mockvariableArr.push([queryName, variables]);
-    //   }
-
-    // }
   }
 
   return
@@ -353,6 +334,7 @@ const getMockVariablesToBeCommented = () => {
 
 
 }
+
 const getAST = () => {
   let content = "";
 
@@ -438,7 +420,7 @@ const addMocksvariable =  (mapWithLineNumber,mapWithoutLineNumber, filePath, tes
     createMockVariables(mapWithoutLineNumber);
 
     if (mockvariableArr.length) {
-      const content = getMockVariables();
+      const content = getMockVariablesToBeCommented();
       //console.log(filePath);
       fs.appendFileSync(`${filePath}`, content);
     }
@@ -458,7 +440,7 @@ const addMocksvariable =  (mapWithLineNumber,mapWithoutLineNumber, filePath, tes
     const data = fs.readFileSync(`${filePath}`, 'utf-8');
     const ast = parser.parse(data, {
       sourceType: "module",
-      plugins: ["jsx"]
+      plugins: ["jsx","typescript"]
     });
 
     // getting the last import statements index
@@ -467,8 +449,15 @@ const addMocksvariable =  (mapWithLineNumber,mapWithoutLineNumber, filePath, tes
       if (topLvlDeclarartions.type === "ImportDeclaration") {
         lastImportIndex = index;
         topLvlDeclarartions.specifiers.forEach((importSpecifiers) => {
-          if (importSpecifiers.imported.name === "MockedProvider") {
+          if (//importSpecifiers &&
+            //importSpecifiers.imported &&
+            importSpecifiers?.imported?.name === "MockedProvider") {
             aliasNameForMockProvider = importSpecifiers.local.name;
+          }
+          if (//importSpecifiers &&
+            //importSpecifiers.imported &&
+            importSpecifiers?.imported?.name === "render") {
+            aliasNameForRender = importSpecifiers.local.name;
           }
         })
       }

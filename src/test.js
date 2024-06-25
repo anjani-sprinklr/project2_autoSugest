@@ -58,3 +58,12 @@ ps.on('error', (err) => {
 
 // assumptions that import for variable sis from 'import'
 // and a single array is avoided
+
+// null
+// describe
+// as
+// test or it
+// without name
+// render or setup, or local name
+
+// @/, @sprinklr, ../  :not a library

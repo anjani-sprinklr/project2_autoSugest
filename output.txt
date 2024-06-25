@@ -1,8 +1,17 @@
 [1G[0K⠙[1G[0K[1m[2mDetermining test suites to run...[22m[22m[999D[K
 [K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
 [K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
+[K[1A[K[1A  [2mconsole.log[22m
+    { title: 'abcd' }
+[2m[22m
+[2m      [2mat Object.log ([22m[2msrc/dog.test.tsx[2m:18:9)[22m[2m[22m
+
+
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
+[K[1A[K[1A[999D[K
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
 [K[1A[K[1A[31m  [2m[33mconsole.warn[39m[22m
 [33m    No more mocked responses for the query: query GetLocations {[39m
 [33m      locations {[39m
@@ -16,353 +25,13 @@
 [33m    [39m
 [33m    This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable.[39m
 [2m[22m
-[2m    [0m [90m 46 |[39m[22m
-[2m     [90m 47 |[39m test([32m"renders without error second 1000"[39m[33m,[39m [36masync[39m () [33m=>[39m {[22m
-[2m    [31m[1m>[22m[2m[39m[90m 48 |[39m   render([33m<[39m[33mMockedProvider[39m mocks[33m=[39m{[33mMOCKS_14[39m} addTypename[33m=[39m{[36mfalse[39m}[33m>[39m[22m
-[2m     [90m    |[39m         [31m[1m^[22m[2m[39m[22m
-[2m     [90m 49 |[39m       [33m<[39m[33mDog[39m name[33m=[39m[32m"Buck"[39m name2[33m=[39m[32m"Buck2"[39m name3[33m=[39m[32m"buck3"[39m name4[33m=[39m[32m"Buck4"[39m name5[33m=[39m[32m"Buck5"[39m [33m/[39m[33m>[39m[22m
-[2m     [90m 50 |[39m     [33m<[39m[33m/[39m[33mMockedProvider[39m[33m>[39m)[33m;[39m[22m
-[2m     [90m 51 |[39m   [90m// expect(screen.getByText("Loading...")).toBeInTheDocument();[39m[0m[22m
-[2m[22m
-[2m      [2mat MockLink.Object.<anonymous>.MockLink.request ([22m[2mnode_modules/@apollo/client/testing/core/mocking/mockLink.js[2m:74:25)[22m[2m[22m
-[2m      [2mat Object.<anonymous>.ApolloLink.execute ([22m[2mnode_modules/@apollo/client/link/core/ApolloLink.js[2m:47:22)[22m[2m[22m
-[2m      [2mat QueryManager.execute [as getObservableFromLink] ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:712:25)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.getResultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:748:30)[22m[2m[22m
-[2m      [2mat resultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1041:26)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchQueryByPolicy ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1069:52)[22m[2m[22m
-[2m      [2mat fromVariables ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:811:41)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchConcastWithInfo ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:853:35)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.fetch ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:535:57)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserveAsConcast ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:653:23)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserve ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:681:21)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:39:23[22m[2m[22m
-[2m      [2mat new Subscription ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:197:34)[22m[2m[22m
-[2m      [2mat ObservableQuery.subscribe ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:279:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/react/hooks/useQuery.js[2m:206:41[22m[2m[22m
-[2m      [2mat subscribeToStore ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:16139:10)[22m[2m[22m
-[2m      [2mat commitHookEffectListMount ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:23189:26)[22m[2m[22m
-[2m      [2mat commitPassiveMountOnFiber ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24970:11)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_complete ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24930:9)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_begin ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24917:7)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24905:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffectsImpl ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27078:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27023:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:26808:9[22m[2m[22m
-[2m      [2mat flushActQueue ([22m[2mnode_modules/react/cjs/react.development.js[2m:2667:24)[22m[2m[22m
-[2m      [2mat act ([22m[2mnode_modules/react/cjs/react.development.js[2m:2582:11)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@testing-library/react/dist/act-compat.js[2m:47:25[22m[2m[22m
-[2m      [2mat renderRoot ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:180:26)[22m[2m[22m
-[2m      [2mat render ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:271:10)[22m[2m[22m
-[2m      [2mat Object.<anonymous> ([22m[2msrc/dog2.test.tsx[2m:48:9)[22m[2m[22m
-[39m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[31m  [2m[33mconsole.warn[39m[22m
-[33m    No more mocked responses for the query: query GetDog($name: String) {[39m
-[33m      dog(name: $name) {[39m
-[33m        id[39m
-[33m        name[39m
-[33m        breed[39m
-[33m      }[39m
-[33m    }[39m
-[33m    Expected variables: {"name":"Buck","name2":"Buck2","name3":"buck3","name4":"Buck4","name5":"Buck5"}[39m
-[33m    [39m
-[33m    This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable.[39m
-[2m[22m
-[2m    [0m [90m 52 |[39m })[33m;[39m[22m
-[2m     [90m 53 |[39m test([32m"renders without error second 2000"[39m[33m,[39m [36masync[39m () [33m=>[39m {[22m
-[2m    [31m[1m>[22m[2m[39m[90m 54 |[39m   render([33m<[39m[33mMockedProvider[39m mocks[33m=[39m{[22m
-[2m     [90m    |[39m         [31m[1m^[22m[2m[39m[22m
-[2m     [90m 55 |[39m     [{[22m
-[2m     [90m 56 |[39m       request[33m:[39m {[22m
-[2m     [90m 57 |[39m         query[33m:[39m [33mGET_LOCATIONS_QUERY[39m[33m,[39m[0m[22m
-[2m[22m
-[2m      [2mat MockLink.Object.<anonymous>.MockLink.request ([22m[2mnode_modules/@apollo/client/testing/core/mocking/mockLink.js[2m:74:25)[22m[2m[22m
-[2m      [2mat Object.<anonymous>.ApolloLink.execute ([22m[2mnode_modules/@apollo/client/link/core/ApolloLink.js[2m:47:22)[22m[2m[22m
-[2m      [2mat QueryManager.execute [as getObservableFromLink] ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:712:25)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.getResultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:748:30)[22m[2m[22m
-[2m      [2mat resultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1041:26)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchQueryByPolicy ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1069:52)[22m[2m[22m
-[2m      [2mat fromVariables ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:811:41)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchConcastWithInfo ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:853:35)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.fetch ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:535:57)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserveAsConcast ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:653:23)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserve ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:681:21)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:39:23[22m[2m[22m
-[2m      [2mat new Subscription ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:197:34)[22m[2m[22m
-[2m      [2mat ObservableQuery.subscribe ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:279:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/react/hooks/useQuery.js[2m:206:41[22m[2m[22m
-[2m      [2mat subscribeToStore ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:16139:10)[22m[2m[22m
-[2m      [2mat commitHookEffectListMount ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:23189:26)[22m[2m[22m
-[2m      [2mat commitPassiveMountOnFiber ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24970:11)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_complete ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24930:9)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_begin ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24917:7)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24905:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffectsImpl ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27078:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27023:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:26808:9[22m[2m[22m
-[2m      [2mat flushActQueue ([22m[2mnode_modules/react/cjs/react.development.js[2m:2667:24)[22m[2m[22m
-[2m      [2mat act ([22m[2mnode_modules/react/cjs/react.development.js[2m:2582:11)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@testing-library/react/dist/act-compat.js[2m:47:25[22m[2m[22m
-[2m      [2mat renderRoot ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:180:26)[22m[2m[22m
-[2m      [2mat render ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:271:10)[22m[2m[22m
-[2m      [2mat Object.<anonymous> ([22m[2msrc/dog2.test.tsx[2m:54:9)[22m[2m[22m
-[39m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[31m  [2m[33mconsole.warn[39m[22m
-[33m    No more mocked responses for the query: query GetDog($name: String) {[39m
-[33m      dog(name: $name) {[39m
-[33m        id[39m
-[33m        name[39m
-[33m        breed[39m
-[33m      }[39m
-[33m    }[39m
-[33m    Expected variables: {"name":"Buck","name2":"Buck2","name3":"buck3","name4":"Buck4","name5":"Buck5"}[39m
-[33m    [39m
-[33m    This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable.[39m
-[2m[22m
-[2m    [0m [90m 72 |[39m test([32m"renders without error second"[39m[33m,[39m [36masync[39m () [33m=>[39m {[22m
-[2m     [90m 73 |[39m   [22m
-[2m    [31m[1m>[22m[2m[39m[90m 74 |[39m   render([22m
-[2m     [90m    |[39m         [31m[1m^[22m[2m[39m[22m
-[2m     [90m 75 |[39m     [33m<[39m[33mMockedProvider[39m mocks[33m=[39m{[]} addTypename[33m=[39m{[36mfalse[39m}[33m>[39m[22m
-[2m     [90m 76 |[39m       [33m<[39m[33mDog[39m name[33m=[39m[32m"Buck"[39m name2[33m=[39m[32m"Buck2"[39m name3[33m=[39m[32m"buck3"[39m name4[33m=[39m[32m"Buck4"[39m name5[33m=[39m[32m"Buck5"[39m [33m/[39m[33m>[39m[22m
-[2m     [90m 77 |[39m     [33m<[39m[33m/[39m[33mMockedProvider[39m[33m>[39m[0m[22m
-[2m[22m
-[2m      [2mat MockLink.Object.<anonymous>.MockLink.request ([22m[2mnode_modules/@apollo/client/testing/core/mocking/mockLink.js[2m:74:25)[22m[2m[22m
-[2m      [2mat Object.<anonymous>.ApolloLink.execute ([22m[2mnode_modules/@apollo/client/link/core/ApolloLink.js[2m:47:22)[22m[2m[22m
-[2m      [2mat QueryManager.execute [as getObservableFromLink] ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:712:25)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.getResultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:748:30)[22m[2m[22m
-[2m      [2mat resultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1041:26)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchQueryByPolicy ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1069:52)[22m[2m[22m
-[2m      [2mat fromVariables ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:811:41)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchConcastWithInfo ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:853:35)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.fetch ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:535:57)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserveAsConcast ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:653:23)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserve ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:681:21)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:39:23[22m[2m[22m
-[2m      [2mat new Subscription ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:197:34)[22m[2m[22m
-[2m      [2mat ObservableQuery.subscribe ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:279:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/react/hooks/useQuery.js[2m:206:41[22m[2m[22m
-[2m      [2mat subscribeToStore ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:16139:10)[22m[2m[22m
-[2m      [2mat commitHookEffectListMount ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:23189:26)[22m[2m[22m
-[2m      [2mat commitPassiveMountOnFiber ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24970:11)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_complete ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24930:9)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_begin ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24917:7)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24905:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffectsImpl ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27078:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27023:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:26808:9[22m[2m[22m
-[2m      [2mat flushActQueue ([22m[2mnode_modules/react/cjs/react.development.js[2m:2667:24)[22m[2m[22m
-[2m      [2mat act ([22m[2mnode_modules/react/cjs/react.development.js[2m:2582:11)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@testing-library/react/dist/act-compat.js[2m:47:25[22m[2m[22m
-[2m      [2mat renderRoot ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:180:26)[22m[2m[22m
-[2m      [2mat render ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:271:10)[22m[2m[22m
-[2m      [2mat Object.<anonymous> ([22m[2msrc/dog2.test.tsx[2m:74:9)[22m[2m[22m
-[39m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[31m  [2m[33mconsole.warn[39m[22m
-[33m    No more mocked responses for the query: query GetLocations {[39m
-[33m      locations {[39m
-[33m        id[39m
-[33m        name[39m
-[33m        description[39m
-[33m        photo[39m
-[33m      }[39m
-[33m    }[39m
-[33m    Expected variables: {"name":"name2"}[39m
-[33m    [39m
-[33m    This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable.[39m
-[2m[22m
-[2m    [0m [90m 72 |[39m test([32m"renders without error second"[39m[33m,[39m [36masync[39m () [33m=>[39m {[22m
-[2m     [90m 73 |[39m   [22m
-[2m    [31m[1m>[22m[2m[39m[90m 74 |[39m   render([22m
-[2m     [90m    |[39m         [31m[1m^[22m[2m[39m[22m
-[2m     [90m 75 |[39m     [33m<[39m[33mMockedProvider[39m mocks[33m=[39m{[]} addTypename[33m=[39m{[36mfalse[39m}[33m>[39m[22m
-[2m     [90m 76 |[39m       [33m<[39m[33mDog[39m name[33m=[39m[32m"Buck"[39m name2[33m=[39m[32m"Buck2"[39m name3[33m=[39m[32m"buck3"[39m name4[33m=[39m[32m"Buck4"[39m name5[33m=[39m[32m"Buck5"[39m [33m/[39m[33m>[39m[22m
-[2m     [90m 77 |[39m     [33m<[39m[33m/[39m[33mMockedProvider[39m[33m>[39m[0m[22m
-[2m[22m
-[2m      [2mat MockLink.Object.<anonymous>.MockLink.request ([22m[2mnode_modules/@apollo/client/testing/core/mocking/mockLink.js[2m:74:25)[22m[2m[22m
-[2m      [2mat Object.<anonymous>.ApolloLink.execute ([22m[2mnode_modules/@apollo/client/link/core/ApolloLink.js[2m:47:22)[22m[2m[22m
-[2m      [2mat QueryManager.execute [as getObservableFromLink] ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:712:25)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.getResultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:748:30)[22m[2m[22m
-[2m      [2mat resultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1041:26)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchQueryByPolicy ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1069:52)[22m[2m[22m
-[2m      [2mat fromVariables ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:811:41)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchConcastWithInfo ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:853:35)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.fetch ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:535:57)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserveAsConcast ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:653:23)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserve ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:681:21)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:39:23[22m[2m[22m
-[2m      [2mat new Subscription ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:197:34)[22m[2m[22m
-[2m      [2mat ObservableQuery.subscribe ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:279:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/react/hooks/useQuery.js[2m:206:41[22m[2m[22m
-[2m      [2mat subscribeToStore ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:16139:10)[22m[2m[22m
-[2m      [2mat commitHookEffectListMount ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:23189:26)[22m[2m[22m
-[2m      [2mat commitPassiveMountOnFiber ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24970:11)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_complete ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24930:9)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_begin ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24917:7)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24905:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffectsImpl ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27078:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27023:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:26808:9[22m[2m[22m
-[2m      [2mat flushActQueue ([22m[2mnode_modules/react/cjs/react.development.js[2m:2667:24)[22m[2m[22m
-[2m      [2mat act ([22m[2mnode_modules/react/cjs/react.development.js[2m:2582:11)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@testing-library/react/dist/act-compat.js[2m:47:25[22m[2m[22m
-[2m      [2mat renderRoot ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:180:26)[22m[2m[22m
-[2m      [2mat render ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:271:10)[22m[2m[22m
-[2m      [2mat Object.<anonymous> ([22m[2msrc/dog2.test.tsx[2m:74:9)[22m[2m[22m
-[39m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[31m  [2m[33mconsole.warn[39m[22m
-[33m    No more mocked responses for the query: query GetDog($name: String) {[39m
-[33m      dog(name: $name) {[39m
-[33m        id[39m
-[33m        name[39m
-[33m        breed[39m
-[33m      }[39m
-[33m    }[39m
-[33m    Expected variables: {"name":"Buck","name2":"Buck2","name3":"buck3","name4":"Buck4","name5":"Buck56"}[39m
-[33m    [39m
-[33m    This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable.[39m
-[2m[22m
-[2m    [0m [90m 85 |[39m test([32m"renders without error second 2"[39m[33m,[39m [36masync[39m () [33m=>[39m {[22m
-[2m     [90m 86 |[39m   [22m
-[2m    [31m[1m>[22m[2m[39m[90m 87 |[39m   render([22m
-[2m     [90m    |[39m         [31m[1m^[22m[2m[39m[22m
-[2m     [90m 88 |[39m     [33m<[39m[33mMockedProvider[39m mocks[33m=[39m{[]} addTypename[33m=[39m{[36mfalse[39m}[33m>[39m[22m
-[2m     [90m 89 |[39m       [33m<[39m[33mDog[39m name[33m=[39m[32m"Buck"[39m name2[33m=[39m[32m"Buck2"[39m name3[33m=[39m[32m"buck3"[39m name4[33m=[39m[32m"Buck4"[39m name5[33m=[39m[32m"Buck56"[39m [33m/[39m[33m>[39m[22m
-[2m     [90m 90 |[39m     [33m<[39m[33m/[39m[33mMockedProvider[39m[33m>[39m[0m[22m
-[2m[22m
-[2m      [2mat MockLink.Object.<anonymous>.MockLink.request ([22m[2mnode_modules/@apollo/client/testing/core/mocking/mockLink.js[2m:74:25)[22m[2m[22m
-[2m      [2mat Object.<anonymous>.ApolloLink.execute ([22m[2mnode_modules/@apollo/client/link/core/ApolloLink.js[2m:47:22)[22m[2m[22m
-[2m      [2mat QueryManager.execute [as getObservableFromLink] ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:712:25)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.getResultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:748:30)[22m[2m[22m
-[2m      [2mat resultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1041:26)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchQueryByPolicy ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1069:52)[22m[2m[22m
-[2m      [2mat fromVariables ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:811:41)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchConcastWithInfo ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:853:35)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.fetch ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:535:57)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserveAsConcast ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:653:23)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserve ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:681:21)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:39:23[22m[2m[22m
-[2m      [2mat new Subscription ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:197:34)[22m[2m[22m
-[2m      [2mat ObservableQuery.subscribe ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:279:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/react/hooks/useQuery.js[2m:206:41[22m[2m[22m
-[2m      [2mat subscribeToStore ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:16139:10)[22m[2m[22m
-[2m      [2mat commitHookEffectListMount ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:23189:26)[22m[2m[22m
-[2m      [2mat commitPassiveMountOnFiber ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24970:11)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_complete ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24930:9)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_begin ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24917:7)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24905:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffectsImpl ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27078:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27023:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:26808:9[22m[2m[22m
-[2m      [2mat flushActQueue ([22m[2mnode_modules/react/cjs/react.development.js[2m:2667:24)[22m[2m[22m
-[2m      [2mat act ([22m[2mnode_modules/react/cjs/react.development.js[2m:2582:11)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@testing-library/react/dist/act-compat.js[2m:47:25[22m[2m[22m
-[2m      [2mat renderRoot ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:180:26)[22m[2m[22m
-[2m      [2mat render ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:271:10)[22m[2m[22m
-[2m      [2mat Object.<anonymous> ([22m[2msrc/dog2.test.tsx[2m:87:9)[22m[2m[22m
-[39m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[31m  [2m[33mconsole.warn[39m[22m
-[33m    No more mocked responses for the query: query GetLocations {[39m
-[33m      locations {[39m
-[33m        id[39m
-[33m        name[39m
-[33m        description[39m
-[33m        photo[39m
-[33m      }[39m
-[33m    }[39m
-[33m    Expected variables: {"name":"name2"}[39m
-[33m    [39m
-[33m    This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable.[39m
-[2m[22m
-[2m    [0m [90m 85 |[39m test([32m"renders without error second 2"[39m[33m,[39m [36masync[39m () [33m=>[39m {[22m
-[2m     [90m 86 |[39m   [22m
-[2m    [31m[1m>[22m[2m[39m[90m 87 |[39m   render([22m
-[2m     [90m    |[39m         [31m[1m^[22m[2m[39m[22m
-[2m     [90m 88 |[39m     [33m<[39m[33mMockedProvider[39m mocks[33m=[39m{[]} addTypename[33m=[39m{[36mfalse[39m}[33m>[39m[22m
-[2m     [90m 89 |[39m       [33m<[39m[33mDog[39m name[33m=[39m[32m"Buck"[39m name2[33m=[39m[32m"Buck2"[39m name3[33m=[39m[32m"buck3"[39m name4[33m=[39m[32m"Buck4"[39m name5[33m=[39m[32m"Buck56"[39m [33m/[39m[33m>[39m[22m
-[2m     [90m 90 |[39m     [33m<[39m[33m/[39m[33mMockedProvider[39m[33m>[39m[0m[22m
-[2m[22m
-[2m      [2mat MockLink.Object.<anonymous>.MockLink.request ([22m[2mnode_modules/@apollo/client/testing/core/mocking/mockLink.js[2m:74:25)[22m[2m[22m
-[2m      [2mat Object.<anonymous>.ApolloLink.execute ([22m[2mnode_modules/@apollo/client/link/core/ApolloLink.js[2m:47:22)[22m[2m[22m
-[2m      [2mat QueryManager.execute [as getObservableFromLink] ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:712:25)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.getResultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:748:30)[22m[2m[22m
-[2m      [2mat resultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1041:26)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchQueryByPolicy ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1069:52)[22m[2m[22m
-[2m      [2mat fromVariables ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:811:41)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchConcastWithInfo ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:853:35)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.fetch ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:535:57)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserveAsConcast ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:653:23)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserve ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:681:21)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:39:23[22m[2m[22m
-[2m      [2mat new Subscription ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:197:34)[22m[2m[22m
-[2m      [2mat ObservableQuery.subscribe ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:279:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/react/hooks/useQuery.js[2m:206:41[22m[2m[22m
-[2m      [2mat subscribeToStore ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:16139:10)[22m[2m[22m
-[2m      [2mat commitHookEffectListMount ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:23189:26)[22m[2m[22m
-[2m      [2mat commitPassiveMountOnFiber ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24970:11)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_complete ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24930:9)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_begin ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24917:7)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24905:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffectsImpl ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27078:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27023:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:26808:9[22m[2m[22m
-[2m      [2mat flushActQueue ([22m[2mnode_modules/react/cjs/react.development.js[2m:2667:24)[22m[2m[22m
-[2m      [2mat act ([22m[2mnode_modules/react/cjs/react.development.js[2m:2582:11)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@testing-library/react/dist/act-compat.js[2m:47:25[22m[2m[22m
-[2m      [2mat renderRoot ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:180:26)[22m[2m[22m
-[2m      [2mat render ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:271:10)[22m[2m[22m
-[2m      [2mat Object.<anonymous> ([22m[2msrc/dog2.test.tsx[2m:87:9)[22m[2m[22m
-[39m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[31m  [2m[33mconsole.warn[39m[22m
-[33m    No more mocked responses for the query: query GetDog($name: String) {[39m
-[33m      dog(name: $name) {[39m
-[33m        id[39m
-[33m        name[39m
-[33m        breed[39m
-[33m      }[39m
-[33m    }[39m
-[33m    Expected variables: {"name":"Buck","name2":"Buck2","name3":"buck3","name4":"Buck4","name5":"Buck5"}[39m
-[33m    [39m
-[33m    This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable.[39m
-[2m[22m
-[2m    [0m [90m 20 |[39m [36mconst[39m setup[33m=[39m() [33m=>[39m {[22m
-[2m     [90m 21 |[39m   [36mreturn[39m ([22m
-[2m    [31m[1m>[22m[2m[39m[90m 22 |[39m     render([22m
+[2m    [0m [90m 36 |[39m describe([32m'ComponentName'[39m[33m,[39m () [33m=>[39m {[22m
+[2m     [90m 37 |[39m   it([32m"renders without error second"[39m[33m,[39m [36masync[39m () [33m=>[39m {[22m
+[2m    [31m[1m>[22m[2m[39m[90m 38 |[39m     render([22m
 [2m     [90m    |[39m           [31m[1m^[22m[2m[39m[22m
-[2m     [90m 23 |[39m       [33m<[39m[33mMockedProvider[39m mocks[33m=[39m{[]} addTypename[33m=[39m{[36mfalse[39m}[33m>[39m[22m
-[2m     [90m 24 |[39m         [33m<[39m[33mDog[39m name[33m=[39m[32m"Buck"[39m name2[33m=[39m[32m"Buck2"[39m name3[33m=[39m[32m"buck3"[39m name4[33m=[39m[32m"Buck4"[39m name5[33m=[39m[32m"Buck5"[39m [33m/[39m[33m>[39m[22m
-[2m     [90m 25 |[39m       [33m<[39m[33m/[39m[33mMockedProvider[39m[33m>[39m[0m[22m
+[2m     [90m 39 |[39m       [33m<[39m[33mAnjaniProvider[39m mocks[33m=[39m{[33mMOCKS_14[39m} addTypename[33m=[39m{[36mfalse[39m}[33m>[39m[22m
+[2m     [90m 40 |[39m         [33m<[39m[33mDog[39m name[33m=[39m[32m"Buck"[39m name2[33m=[39m[32m"Buck2"[39m name3[33m=[39m[32m"buck3"[39m name4[33m=[39m[32m"Buck4"[39m name5[33m=[39m[32m"Buck5"[39m [33m/[39m[33m>[39m[22m
+[2m     [90m 41 |[39m       [33m<[39m[33m/[39m[33mAnjaniProvider[39m[33m>[39m[0m[22m
 [2m[22m
 [2m      [2mat MockLink.Object.<anonymous>.MockLink.request ([22m[2mnode_modules/@apollo/client/testing/core/mocking/mockLink.js[2m:74:25)[22m[2m[22m
 [2m      [2mat Object.<anonymous>.ApolloLink.execute ([22m[2mnode_modules/@apollo/client/link/core/ApolloLink.js[2m:47:22)[22m[2m[22m
@@ -393,185 +62,14 @@
 [2m      [2mat [22m[2mnode_modules/@testing-library/react/dist/act-compat.js[2m:47:25[22m[2m[22m
 [2m      [2mat renderRoot ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:180:26)[22m[2m[22m
 [2m      [2mat render ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:271:10)[22m[2m[22m
-[2m      [2mat setup ([22m[2msrc/dog2.test.tsx[2m:22:11)[22m[2m[22m
-[2m      [2mat Object.<anonymous> ([22m[2msrc/dog2.test.tsx[2m:98:3)[22m[2m[22m
+[2m      [2mat Object.<anonymous> ([22m[2msrc/dog.test.tsx[2m:38:11)[22m[2m[22m
 [39m
 
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[31m  [2m[33mconsole.warn[39m[22m
-[33m    No more mocked responses for the query: query GetLocations {[39m
-[33m      locations {[39m
-[33m        id[39m
-[33m        name[39m
-[33m        description[39m
-[33m        photo[39m
-[33m      }[39m
-[33m    }[39m
-[33m    Expected variables: {"name":"name2"}[39m
-[33m    [39m
-[33m    This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable.[39m
-[2m[22m
-[2m    [0m [90m 20 |[39m [36mconst[39m setup[33m=[39m() [33m=>[39m {[22m
-[2m     [90m 21 |[39m   [36mreturn[39m ([22m
-[2m    [31m[1m>[22m[2m[39m[90m 22 |[39m     render([22m
-[2m     [90m    |[39m           [31m[1m^[22m[2m[39m[22m
-[2m     [90m 23 |[39m       [33m<[39m[33mMockedProvider[39m mocks[33m=[39m{[]} addTypename[33m=[39m{[36mfalse[39m}[33m>[39m[22m
-[2m     [90m 24 |[39m         [33m<[39m[33mDog[39m name[33m=[39m[32m"Buck"[39m name2[33m=[39m[32m"Buck2"[39m name3[33m=[39m[32m"buck3"[39m name4[33m=[39m[32m"Buck4"[39m name5[33m=[39m[32m"Buck5"[39m [33m/[39m[33m>[39m[22m
-[2m     [90m 25 |[39m       [33m<[39m[33m/[39m[33mMockedProvider[39m[33m>[39m[0m[22m
-[2m[22m
-[2m      [2mat MockLink.Object.<anonymous>.MockLink.request ([22m[2mnode_modules/@apollo/client/testing/core/mocking/mockLink.js[2m:74:25)[22m[2m[22m
-[2m      [2mat Object.<anonymous>.ApolloLink.execute ([22m[2mnode_modules/@apollo/client/link/core/ApolloLink.js[2m:47:22)[22m[2m[22m
-[2m      [2mat QueryManager.execute [as getObservableFromLink] ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:712:25)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.getResultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:748:30)[22m[2m[22m
-[2m      [2mat resultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1041:26)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchQueryByPolicy ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1069:52)[22m[2m[22m
-[2m      [2mat fromVariables ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:811:41)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchConcastWithInfo ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:853:35)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.fetch ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:535:57)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserveAsConcast ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:653:23)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserve ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:681:21)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:39:23[22m[2m[22m
-[2m      [2mat new Subscription ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:197:34)[22m[2m[22m
-[2m      [2mat ObservableQuery.subscribe ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:279:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/react/hooks/useQuery.js[2m:206:41[22m[2m[22m
-[2m      [2mat subscribeToStore ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:16139:10)[22m[2m[22m
-[2m      [2mat commitHookEffectListMount ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:23189:26)[22m[2m[22m
-[2m      [2mat commitPassiveMountOnFiber ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24970:11)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_complete ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24930:9)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_begin ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24917:7)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24905:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffectsImpl ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27078:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27023:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:26808:9[22m[2m[22m
-[2m      [2mat flushActQueue ([22m[2mnode_modules/react/cjs/react.development.js[2m:2667:24)[22m[2m[22m
-[2m      [2mat act ([22m[2mnode_modules/react/cjs/react.development.js[2m:2582:11)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@testing-library/react/dist/act-compat.js[2m:47:25[22m[2m[22m
-[2m      [2mat renderRoot ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:180:26)[22m[2m[22m
-[2m      [2mat render ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:271:10)[22m[2m[22m
-[2m      [2mat setup ([22m[2msrc/dog2.test.tsx[2m:22:11)[22m[2m[22m
-[2m      [2mat Object.<anonymous> ([22m[2msrc/dog2.test.tsx[2m:98:3)[22m[2m[22m
-[39m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
 [K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
 [K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[31m  [2m[33mconsole.warn[39m[22m
-[33m    No more mocked responses for the query: query GetDog($name: String) {[39m
-[33m      dog(name: $name) {[39m
-[33m        id[39m
-[33m        name[39m
-[33m        breed[39m
-[33m      }[39m
-[33m    }[39m
-[33m    Expected variables: {"name":"Buck","name2":"Buck2","name3":"buck3","name4":"Buck4","name5":"Buck55"}[39m
-[33m    [39m
-[33m    This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable.[39m
-[2m[22m
-[2m    [0m [90m 105 |[39m test([32m"renders without error second 4"[39m[33m,[39m [36masync[39m () [33m=>[39m {[22m
-[2m     [90m 106 |[39m   [22m
-[2m    [31m[1m>[22m[2m[39m[90m 107 |[39m   render([22m
-[2m     [90m     |[39m         [31m[1m^[22m[2m[39m[22m
-[2m     [90m 108 |[39m     [33m<[39m[33mMockedProvider[39m mocks[33m=[39m{[]} addTypename[33m=[39m{[36mfalse[39m}[33m>[39m[22m
-[2m     [90m 109 |[39m       [33m<[39m[33mDog[39m name[33m=[39m[32m"Buck"[39m name2[33m=[39m[32m"Buck2"[39m name3[33m=[39m[32m"buck3"[39m name4[33m=[39m[32m"Buck4"[39m name5[33m=[39m[32m"Buck55"[39m [33m/[39m[33m>[39m[22m
-[2m     [90m 110 |[39m     [33m<[39m[33m/[39m[33mMockedProvider[39m[33m>[39m[0m[22m
-[2m[22m
-[2m      [2mat MockLink.Object.<anonymous>.MockLink.request ([22m[2mnode_modules/@apollo/client/testing/core/mocking/mockLink.js[2m:74:25)[22m[2m[22m
-[2m      [2mat Object.<anonymous>.ApolloLink.execute ([22m[2mnode_modules/@apollo/client/link/core/ApolloLink.js[2m:47:22)[22m[2m[22m
-[2m      [2mat QueryManager.execute [as getObservableFromLink] ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:712:25)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.getResultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:748:30)[22m[2m[22m
-[2m      [2mat resultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1041:26)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchQueryByPolicy ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1069:52)[22m[2m[22m
-[2m      [2mat fromVariables ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:811:41)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchConcastWithInfo ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:853:35)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.fetch ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:535:57)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserveAsConcast ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:653:23)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserve ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:681:21)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:39:23[22m[2m[22m
-[2m      [2mat new Subscription ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:197:34)[22m[2m[22m
-[2m      [2mat ObservableQuery.subscribe ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:279:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/react/hooks/useQuery.js[2m:206:41[22m[2m[22m
-[2m      [2mat subscribeToStore ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:16139:10)[22m[2m[22m
-[2m      [2mat commitHookEffectListMount ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:23189:26)[22m[2m[22m
-[2m      [2mat commitPassiveMountOnFiber ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24970:11)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_complete ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24930:9)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_begin ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24917:7)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24905:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffectsImpl ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27078:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27023:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:26808:9[22m[2m[22m
-[2m      [2mat flushActQueue ([22m[2mnode_modules/react/cjs/react.development.js[2m:2667:24)[22m[2m[22m
-[2m      [2mat act ([22m[2mnode_modules/react/cjs/react.development.js[2m:2582:11)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@testing-library/react/dist/act-compat.js[2m:47:25[22m[2m[22m
-[2m      [2mat renderRoot ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:180:26)[22m[2m[22m
-[2m      [2mat render ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:271:10)[22m[2m[22m
-[2m      [2mat Object.<anonymous> ([22m[2msrc/dog2.test.tsx[2m:107:9)[22m[2m[22m
-[39m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[31m  [2m[33mconsole.warn[39m[22m
-[33m    No more mocked responses for the query: query GetLocations {[39m
-[33m      locations {[39m
-[33m        id[39m
-[33m        name[39m
-[33m        description[39m
-[33m        photo[39m
-[33m      }[39m
-[33m    }[39m
-[33m    Expected variables: {"name":"name2"}[39m
-[33m    [39m
-[33m    This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable.[39m
-[2m[22m
-[2m    [0m [90m 105 |[39m test([32m"renders without error second 4"[39m[33m,[39m [36masync[39m () [33m=>[39m {[22m
-[2m     [90m 106 |[39m   [22m
-[2m    [31m[1m>[22m[2m[39m[90m 107 |[39m   render([22m
-[2m     [90m     |[39m         [31m[1m^[22m[2m[39m[22m
-[2m     [90m 108 |[39m     [33m<[39m[33mMockedProvider[39m mocks[33m=[39m{[]} addTypename[33m=[39m{[36mfalse[39m}[33m>[39m[22m
-[2m     [90m 109 |[39m       [33m<[39m[33mDog[39m name[33m=[39m[32m"Buck"[39m name2[33m=[39m[32m"Buck2"[39m name3[33m=[39m[32m"buck3"[39m name4[33m=[39m[32m"Buck4"[39m name5[33m=[39m[32m"Buck55"[39m [33m/[39m[33m>[39m[22m
-[2m     [90m 110 |[39m     [33m<[39m[33m/[39m[33mMockedProvider[39m[33m>[39m[0m[22m
-[2m[22m
-[2m      [2mat MockLink.Object.<anonymous>.MockLink.request ([22m[2mnode_modules/@apollo/client/testing/core/mocking/mockLink.js[2m:74:25)[22m[2m[22m
-[2m      [2mat Object.<anonymous>.ApolloLink.execute ([22m[2mnode_modules/@apollo/client/link/core/ApolloLink.js[2m:47:22)[22m[2m[22m
-[2m      [2mat QueryManager.execute [as getObservableFromLink] ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:712:25)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.getResultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:748:30)[22m[2m[22m
-[2m      [2mat resultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1041:26)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchQueryByPolicy ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1069:52)[22m[2m[22m
-[2m      [2mat fromVariables ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:811:41)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchConcastWithInfo ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:853:35)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.fetch ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:535:57)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserveAsConcast ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:653:23)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserve ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:681:21)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:39:23[22m[2m[22m
-[2m      [2mat new Subscription ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:197:34)[22m[2m[22m
-[2m      [2mat ObservableQuery.subscribe ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:279:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/react/hooks/useQuery.js[2m:206:41[22m[2m[22m
-[2m      [2mat subscribeToStore ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:16139:10)[22m[2m[22m
-[2m      [2mat commitHookEffectListMount ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:23189:26)[22m[2m[22m
-[2m      [2mat commitPassiveMountOnFiber ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24970:11)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_complete ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24930:9)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_begin ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24917:7)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24905:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffectsImpl ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27078:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27023:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:26808:9[22m[2m[22m
-[2m      [2mat flushActQueue ([22m[2mnode_modules/react/cjs/react.development.js[2m:2667:24)[22m[2m[22m
-[2m      [2mat act ([22m[2mnode_modules/react/cjs/react.development.js[2m:2582:11)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@testing-library/react/dist/act-compat.js[2m:47:25[22m[2m[22m
-[2m      [2mat renderRoot ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:180:26)[22m[2m[22m
-[2m      [2mat render ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:271:10)[22m[2m[22m
-[2m      [2mat Object.<anonymous> ([22m[2msrc/dog2.test.tsx[2m:107:9)[22m[2m[22m
-[39m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
 [K[1A[K[1A[31m  [2m[33mconsole.warn[39m[22m
 [33m    No more mocked responses for the query: query GetDog($name: String) {[39m
 [33m      dog(name: $name) {[39m
@@ -584,13 +82,13 @@
 [33m    [39m
 [33m    This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable.[39m
 [2m[22m
-[2m    [0m [90m 117 |[39m test([32m"renders without error second 5"[39m[33m,[39m [36masync[39m () [33m=>[39m {[22m
-[2m     [90m 118 |[39m   [22m
-[2m    [31m[1m>[22m[2m[39m[90m 119 |[39m   render([22m
-[2m     [90m     |[39m         [31m[1m^[22m[2m[39m[22m
-[2m     [90m 120 |[39m     [33m<[39m[33mMockedProvider[39m mocks[33m=[39m{[]} addTypename[33m=[39m{[36mfalse[39m}[33m>[39m[22m
-[2m     [90m 121 |[39m       [33m<[39m[33mDog[39m name[33m=[39m[32m"Buck"[39m name2[33m=[39m[32m"Buck2"[39m name3[33m=[39m[32m"buck3"[39m name4[33m=[39m[32m"Buck4"[39m name5[33m=[39m[32m"Buck5"[39m [33m/[39m[33m>[39m[22m
-[2m     [90m 122 |[39m     [33m<[39m[33m/[39m[33mMockedProvider[39m[33m>[39m[0m[22m
+[2m    [0m [90m 48 |[39m   describe([32m'ComponentName3'[39m[33m,[39m () [33m=>[39m {[22m
+[2m     [90m 49 |[39m     test([32m"renders without error second2"[39m[33m,[39m [36masync[39m () [33m=>[39m {[22m
+[2m    [31m[1m>[22m[2m[39m[90m 50 |[39m       render([22m
+[2m     [90m    |[39m             [31m[1m^[22m[2m[39m[22m
+[2m     [90m 51 |[39m         [33m<[39m[33mAnjaniProvider[39m mocks[33m=[39m{[{[22m
+[2m     [90m 52 |[39m           request[33m:[39m {[22m
+[2m     [90m 53 |[39m             query[33m:[39m [33mGET_LOCATIONS_QUERY[39m[33m,[39m[0m[22m
 [2m[22m
 [2m      [2mat MockLink.Object.<anonymous>.MockLink.request ([22m[2mnode_modules/@apollo/client/testing/core/mocking/mockLink.js[2m:74:25)[22m[2m[22m
 [2m      [2mat Object.<anonymous>.ApolloLink.execute ([22m[2mnode_modules/@apollo/client/link/core/ApolloLink.js[2m:47:22)[22m[2m[22m
@@ -621,12 +119,14 @@
 [2m      [2mat [22m[2mnode_modules/@testing-library/react/dist/act-compat.js[2m:47:25[22m[2m[22m
 [2m      [2mat renderRoot ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:180:26)[22m[2m[22m
 [2m      [2mat render ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:271:10)[22m[2m[22m
-[2m      [2mat Object.<anonymous> ([22m[2msrc/dog2.test.tsx[2m:119:9)[22m[2m[22m
+[2m      [2mat Object.<anonymous> ([22m[2msrc/dog.test.tsx[2m:50:13)[22m[2m[22m
 [39m
 
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
+[K[1A[K[1A
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
 [K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
 [K[1A[K[1A[31m  [2m[33mconsole.warn[39m[22m
 [33m    No more mocked responses for the query: query GetLocations {[39m
 [33m      locations {[39m
@@ -640,13 +140,13 @@
 [33m    [39m
 [33m    This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable.[39m
 [2m[22m
-[2m    [0m [90m 117 |[39m test([32m"renders without error second 5"[39m[33m,[39m [36masync[39m () [33m=>[39m {[22m
-[2m     [90m 118 |[39m   [22m
-[2m    [31m[1m>[22m[2m[39m[90m 119 |[39m   render([22m
-[2m     [90m     |[39m         [31m[1m^[22m[2m[39m[22m
-[2m     [90m 120 |[39m     [33m<[39m[33mMockedProvider[39m mocks[33m=[39m{[]} addTypename[33m=[39m{[36mfalse[39m}[33m>[39m[22m
-[2m     [90m 121 |[39m       [33m<[39m[33mDog[39m name[33m=[39m[32m"Buck"[39m name2[33m=[39m[32m"Buck2"[39m name3[33m=[39m[32m"buck3"[39m name4[33m=[39m[32m"Buck4"[39m name5[33m=[39m[32m"Buck5"[39m [33m/[39m[33m>[39m[22m
-[2m     [90m 122 |[39m     [33m<[39m[33m/[39m[33mMockedProvider[39m[33m>[39m[0m[22m
+[2m    [0m [90m 73 |[39m       describe([32m'ComponentName7'[39m[33m,[39m () [33m=>[39m {[22m
+[2m     [90m 74 |[39m         it([32m"renders without error second 300"[39m[33m,[39m [36masync[39m () [33m=>[39m {[22m
+[2m    [31m[1m>[22m[2m[39m[90m 75 |[39m           render([22m
+[2m     [90m    |[39m                 [31m[1m^[22m[2m[39m[22m
+[2m     [90m 76 |[39m             [33m<[39m[33mAnjaniProvider[39m mocks[33m=[39m{[33mMOCKS_15[39m} addTypename[33m=[39m{[36mfalse[39m}[33m>[39m[22m
+[2m     [90m 77 |[39m               [33m<[39m[33mDog[39m name[33m=[39m[32m"Buck"[39m name2[33m=[39m[32m"Buck2"[39m name3[33m=[39m[32m"buck3"[39m name4[33m=[39m[32m"Buck4"[39m name5[33m=[39m[32m"Buck5"[39m [33m/[39m[33m>[39m[22m
+[2m     [90m 78 |[39m             [33m<[39m[33m/[39m[33mAnjaniProvider[39m[33m>[39m[0m[22m
 [2m[22m
 [2m      [2mat MockLink.Object.<anonymous>.MockLink.request ([22m[2mnode_modules/@apollo/client/testing/core/mocking/mockLink.js[2m:74:25)[22m[2m[22m
 [2m      [2mat Object.<anonymous>.ApolloLink.execute ([22m[2mnode_modules/@apollo/client/link/core/ApolloLink.js[2m:47:22)[22m[2m[22m
@@ -677,423 +177,55 @@
 [2m      [2mat [22m[2mnode_modules/@testing-library/react/dist/act-compat.js[2m:47:25[22m[2m[22m
 [2m      [2mat renderRoot ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:180:26)[22m[2m[22m
 [2m      [2mat render ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:271:10)[22m[2m[22m
-[2m      [2mat Object.<anonymous> ([22m[2msrc/dog2.test.tsx[2m:119:9)[22m[2m[22m
+[2m      [2mat Object.<anonymous> ([22m[2msrc/dog.test.tsx[2m:75:17)[22m[2m[22m
 [39m
 
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
 [K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[31m  [2m[33mconsole.warn[39m[22m
-[33m    No more mocked responses for the query: query GetDog($name: String) {[39m
-[33m      dog(name: $name) {[39m
-[33m        id[39m
-[33m        name[39m
-[33m        breed[39m
-[33m      }[39m
-[33m    }[39m
-[33m    Expected variables: {"name":"Buck12","name2":"Buck2","name3":"buck3","name4":"Buck4","name5":"Buck5"}[39m
-[33m    [39m
-[33m    This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable.[39m
-[2m[22m
-[2m    [0m [90m 129 |[39m test([32m"renders without error second 6"[39m[33m,[39m [36masync[39m () [33m=>[39m {[22m
-[2m     [90m 130 |[39m   [22m
-[2m    [31m[1m>[22m[2m[39m[90m 131 |[39m   render([22m
-[2m     [90m     |[39m         [31m[1m^[22m[2m[39m[22m
-[2m     [90m 132 |[39m     [33m<[39m[33mMockedProvider[39m mocks[33m=[39m{[]} addTypename[33m=[39m{[36mfalse[39m}[33m>[39m[22m
-[2m     [90m 133 |[39m       [33m<[39m[33mDog[39m name[33m=[39m[32m"Buck12"[39m name2[33m=[39m[32m"Buck2"[39m name3[33m=[39m[32m"buck3"[39m name4[33m=[39m[32m"Buck4"[39m name5[33m=[39m[32m"Buck5"[39m [33m/[39m[33m>[39m[22m
-[2m     [90m 134 |[39m     [33m<[39m[33m/[39m[33mMockedProvider[39m[33m>[39m[0m[22m
-[2m[22m
-[2m      [2mat MockLink.Object.<anonymous>.MockLink.request ([22m[2mnode_modules/@apollo/client/testing/core/mocking/mockLink.js[2m:74:25)[22m[2m[22m
-[2m      [2mat Object.<anonymous>.ApolloLink.execute ([22m[2mnode_modules/@apollo/client/link/core/ApolloLink.js[2m:47:22)[22m[2m[22m
-[2m      [2mat QueryManager.execute [as getObservableFromLink] ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:712:25)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.getResultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:748:30)[22m[2m[22m
-[2m      [2mat resultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1041:26)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchQueryByPolicy ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1069:52)[22m[2m[22m
-[2m      [2mat fromVariables ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:811:41)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchConcastWithInfo ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:853:35)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.fetch ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:535:57)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserveAsConcast ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:653:23)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserve ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:681:21)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:39:23[22m[2m[22m
-[2m      [2mat new Subscription ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:197:34)[22m[2m[22m
-[2m      [2mat ObservableQuery.subscribe ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:279:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/react/hooks/useQuery.js[2m:206:41[22m[2m[22m
-[2m      [2mat subscribeToStore ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:16139:10)[22m[2m[22m
-[2m      [2mat commitHookEffectListMount ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:23189:26)[22m[2m[22m
-[2m      [2mat commitPassiveMountOnFiber ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24970:11)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_complete ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24930:9)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_begin ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24917:7)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24905:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffectsImpl ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27078:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27023:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:26808:9[22m[2m[22m
-[2m      [2mat flushActQueue ([22m[2mnode_modules/react/cjs/react.development.js[2m:2667:24)[22m[2m[22m
-[2m      [2mat act ([22m[2mnode_modules/react/cjs/react.development.js[2m:2582:11)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@testing-library/react/dist/act-compat.js[2m:47:25[22m[2m[22m
-[2m      [2mat renderRoot ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:180:26)[22m[2m[22m
-[2m      [2mat render ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:271:10)[22m[2m[22m
-[2m      [2mat Object.<anonymous> ([22m[2msrc/dog2.test.tsx[2m:131:9)[22m[2m[22m
-[39m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[31m  [2m[33mconsole.warn[39m[22m
-[33m    No more mocked responses for the query: query GetLocations {[39m
-[33m      locations {[39m
-[33m        id[39m
-[33m        name[39m
-[33m        description[39m
-[33m        photo[39m
-[33m      }[39m
-[33m    }[39m
-[33m    Expected variables: {"name":"name2"}[39m
-[33m    [39m
-[33m    This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable.[39m
-[2m[22m
-[2m    [0m [90m 129 |[39m test([32m"renders without error second 6"[39m[33m,[39m [36masync[39m () [33m=>[39m {[22m
-[2m     [90m 130 |[39m   [22m
-[2m    [31m[1m>[22m[2m[39m[90m 131 |[39m   render([22m
-[2m     [90m     |[39m         [31m[1m^[22m[2m[39m[22m
-[2m     [90m 132 |[39m     [33m<[39m[33mMockedProvider[39m mocks[33m=[39m{[]} addTypename[33m=[39m{[36mfalse[39m}[33m>[39m[22m
-[2m     [90m 133 |[39m       [33m<[39m[33mDog[39m name[33m=[39m[32m"Buck12"[39m name2[33m=[39m[32m"Buck2"[39m name3[33m=[39m[32m"buck3"[39m name4[33m=[39m[32m"Buck4"[39m name5[33m=[39m[32m"Buck5"[39m [33m/[39m[33m>[39m[22m
-[2m     [90m 134 |[39m     [33m<[39m[33m/[39m[33mMockedProvider[39m[33m>[39m[0m[22m
-[2m[22m
-[2m      [2mat MockLink.Object.<anonymous>.MockLink.request ([22m[2mnode_modules/@apollo/client/testing/core/mocking/mockLink.js[2m:74:25)[22m[2m[22m
-[2m      [2mat Object.<anonymous>.ApolloLink.execute ([22m[2mnode_modules/@apollo/client/link/core/ApolloLink.js[2m:47:22)[22m[2m[22m
-[2m      [2mat QueryManager.execute [as getObservableFromLink] ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:712:25)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.getResultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:748:30)[22m[2m[22m
-[2m      [2mat resultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1041:26)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchQueryByPolicy ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1069:52)[22m[2m[22m
-[2m      [2mat fromVariables ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:811:41)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchConcastWithInfo ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:853:35)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.fetch ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:535:57)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserveAsConcast ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:653:23)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserve ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:681:21)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:39:23[22m[2m[22m
-[2m      [2mat new Subscription ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:197:34)[22m[2m[22m
-[2m      [2mat ObservableQuery.subscribe ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:279:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/react/hooks/useQuery.js[2m:206:41[22m[2m[22m
-[2m      [2mat subscribeToStore ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:16139:10)[22m[2m[22m
-[2m      [2mat commitHookEffectListMount ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:23189:26)[22m[2m[22m
-[2m      [2mat commitPassiveMountOnFiber ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24970:11)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_complete ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24930:9)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_begin ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24917:7)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24905:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffectsImpl ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27078:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27023:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:26808:9[22m[2m[22m
-[2m      [2mat flushActQueue ([22m[2mnode_modules/react/cjs/react.development.js[2m:2667:24)[22m[2m[22m
-[2m      [2mat act ([22m[2mnode_modules/react/cjs/react.development.js[2m:2582:11)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@testing-library/react/dist/act-compat.js[2m:47:25[22m[2m[22m
-[2m      [2mat renderRoot ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:180:26)[22m[2m[22m
-[2m      [2mat render ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:271:10)[22m[2m[22m
-[2m      [2mat Object.<anonymous> ([22m[2msrc/dog2.test.tsx[2m:131:9)[22m[2m[22m
-[39m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[31m  [2m[33mconsole.warn[39m[22m
-[33m    No more mocked responses for the query: query GetDog($name: String) {[39m
-[33m      dog(name: $name) {[39m
-[33m        id[39m
-[33m        name[39m
-[33m        breed[39m
-[33m      }[39m
-[33m    }[39m
-[33m    Expected variables: {"name":"Buck12","name2":"Buck2","name3":"buck3","name4":"Buck4","name5":"Buck5"}[39m
-[33m    [39m
-[33m    This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable.[39m
-[2m[22m
-[2m    [0m [90m 142 |[39m test([32m"renders without error second 7"[39m[33m,[39m [36masync[39m () [33m=>[39m {[22m
-[2m     [90m 143 |[39m   [22m
-[2m    [31m[1m>[22m[2m[39m[90m 144 |[39m   render([22m
-[2m     [90m     |[39m         [31m[1m^[22m[2m[39m[22m
-[2m     [90m 145 |[39m     [33m<[39m[33mMockedProvider[39m mocks[33m=[39m{[]} addTypename[33m=[39m{[36mfalse[39m}[33m>[39m[22m
-[2m     [90m 146 |[39m       [33m<[39m[33mDog[39m name[33m=[39m[32m"Buck12"[39m name2[33m=[39m[32m"Buck2"[39m name3[33m=[39m[32m"buck3"[39m name4[33m=[39m[32m"Buck4"[39m name5[33m=[39m[32m"Buck5"[39m [33m/[39m[33m>[39m[22m
-[2m     [90m 147 |[39m     [33m<[39m[33m/[39m[33mMockedProvider[39m[33m>[39m[0m[22m
-[2m[22m
-[2m      [2mat MockLink.Object.<anonymous>.MockLink.request ([22m[2mnode_modules/@apollo/client/testing/core/mocking/mockLink.js[2m:74:25)[22m[2m[22m
-[2m      [2mat Object.<anonymous>.ApolloLink.execute ([22m[2mnode_modules/@apollo/client/link/core/ApolloLink.js[2m:47:22)[22m[2m[22m
-[2m      [2mat QueryManager.execute [as getObservableFromLink] ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:712:25)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.getResultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:748:30)[22m[2m[22m
-[2m      [2mat resultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1041:26)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchQueryByPolicy ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1069:52)[22m[2m[22m
-[2m      [2mat fromVariables ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:811:41)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchConcastWithInfo ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:853:35)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.fetch ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:535:57)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserveAsConcast ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:653:23)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserve ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:681:21)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:39:23[22m[2m[22m
-[2m      [2mat new Subscription ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:197:34)[22m[2m[22m
-[2m      [2mat ObservableQuery.subscribe ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:279:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/react/hooks/useQuery.js[2m:206:41[22m[2m[22m
-[2m      [2mat subscribeToStore ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:16139:10)[22m[2m[22m
-[2m      [2mat commitHookEffectListMount ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:23189:26)[22m[2m[22m
-[2m      [2mat commitPassiveMountOnFiber ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24970:11)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_complete ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24930:9)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_begin ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24917:7)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24905:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffectsImpl ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27078:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27023:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:26808:9[22m[2m[22m
-[2m      [2mat flushActQueue ([22m[2mnode_modules/react/cjs/react.development.js[2m:2667:24)[22m[2m[22m
-[2m      [2mat act ([22m[2mnode_modules/react/cjs/react.development.js[2m:2582:11)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@testing-library/react/dist/act-compat.js[2m:47:25[22m[2m[22m
-[2m      [2mat renderRoot ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:180:26)[22m[2m[22m
-[2m      [2mat render ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:271:10)[22m[2m[22m
-[2m      [2mat Object.<anonymous> ([22m[2msrc/dog2.test.tsx[2m:144:9)[22m[2m[22m
-[39m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[31m  [2m[33mconsole.warn[39m[22m
-[33m    No more mocked responses for the query: query GetLocations {[39m
-[33m      locations {[39m
-[33m        id[39m
-[33m        name[39m
-[33m        description[39m
-[33m        photo[39m
-[33m      }[39m
-[33m    }[39m
-[33m    Expected variables: {"name":"name2"}[39m
-[33m    [39m
-[33m    This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable.[39m
-[2m[22m
-[2m    [0m [90m 142 |[39m test([32m"renders without error second 7"[39m[33m,[39m [36masync[39m () [33m=>[39m {[22m
-[2m     [90m 143 |[39m   [22m
-[2m    [31m[1m>[22m[2m[39m[90m 144 |[39m   render([22m
-[2m     [90m     |[39m         [31m[1m^[22m[2m[39m[22m
-[2m     [90m 145 |[39m     [33m<[39m[33mMockedProvider[39m mocks[33m=[39m{[]} addTypename[33m=[39m{[36mfalse[39m}[33m>[39m[22m
-[2m     [90m 146 |[39m       [33m<[39m[33mDog[39m name[33m=[39m[32m"Buck12"[39m name2[33m=[39m[32m"Buck2"[39m name3[33m=[39m[32m"buck3"[39m name4[33m=[39m[32m"Buck4"[39m name5[33m=[39m[32m"Buck5"[39m [33m/[39m[33m>[39m[22m
-[2m     [90m 147 |[39m     [33m<[39m[33m/[39m[33mMockedProvider[39m[33m>[39m[0m[22m
-[2m[22m
-[2m      [2mat MockLink.Object.<anonymous>.MockLink.request ([22m[2mnode_modules/@apollo/client/testing/core/mocking/mockLink.js[2m:74:25)[22m[2m[22m
-[2m      [2mat Object.<anonymous>.ApolloLink.execute ([22m[2mnode_modules/@apollo/client/link/core/ApolloLink.js[2m:47:22)[22m[2m[22m
-[2m      [2mat QueryManager.execute [as getObservableFromLink] ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:712:25)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.getResultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:748:30)[22m[2m[22m
-[2m      [2mat resultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1041:26)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchQueryByPolicy ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1069:52)[22m[2m[22m
-[2m      [2mat fromVariables ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:811:41)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchConcastWithInfo ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:853:35)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.fetch ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:535:57)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserveAsConcast ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:653:23)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserve ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:681:21)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:39:23[22m[2m[22m
-[2m      [2mat new Subscription ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:197:34)[22m[2m[22m
-[2m      [2mat ObservableQuery.subscribe ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:279:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/react/hooks/useQuery.js[2m:206:41[22m[2m[22m
-[2m      [2mat subscribeToStore ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:16139:10)[22m[2m[22m
-[2m      [2mat commitHookEffectListMount ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:23189:26)[22m[2m[22m
-[2m      [2mat commitPassiveMountOnFiber ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24970:11)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_complete ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24930:9)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_begin ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24917:7)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24905:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffectsImpl ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27078:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27023:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:26808:9[22m[2m[22m
-[2m      [2mat flushActQueue ([22m[2mnode_modules/react/cjs/react.development.js[2m:2667:24)[22m[2m[22m
-[2m      [2mat act ([22m[2mnode_modules/react/cjs/react.development.js[2m:2582:11)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@testing-library/react/dist/act-compat.js[2m:47:25[22m[2m[22m
-[2m      [2mat renderRoot ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:180:26)[22m[2m[22m
-[2m      [2mat render ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:271:10)[22m[2m[22m
-[2m      [2mat Object.<anonymous> ([22m[2msrc/dog2.test.tsx[2m:144:9)[22m[2m[22m
-[39m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[31m  [2m[33mconsole.warn[39m[22m
-[33m    No more mocked responses for the query: query GetDog($name: String) {[39m
-[33m      dog(name: $name) {[39m
-[33m        id[39m
-[33m        name[39m
-[33m        breed[39m
-[33m      }[39m
-[33m    }[39m
-[33m    Expected variables: {"name":"Buck12","name2":"Buck2","name3":"buck3","name4":"Buck4","name5":"Buck5"}[39m
-[33m    [39m
-[33m    This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable.[39m
-[2m[22m
-[2m    [0m [90m 154 |[39m test([32m"renders without error second 8"[39m[33m,[39m [36masync[39m () [33m=>[39m {[22m
-[2m     [90m 155 |[39m   [22m
-[2m    [31m[1m>[22m[2m[39m[90m 156 |[39m   render([22m
-[2m     [90m     |[39m         [31m[1m^[22m[2m[39m[22m
-[2m     [90m 157 |[39m     [33m<[39m[33mMockedProvider[39m mocks[33m=[39m{[]} addTypename[33m=[39m{[36mfalse[39m}[33m>[39m[22m
-[2m     [90m 158 |[39m       [33m<[39m[33mDog[39m name[33m=[39m[32m"Buck12"[39m name2[33m=[39m[32m"Buck2"[39m name3[33m=[39m[32m"buck3"[39m name4[33m=[39m[32m"Buck4"[39m name5[33m=[39m[32m"Buck5"[39m [33m/[39m[33m>[39m[22m
-[2m     [90m 159 |[39m     [33m<[39m[33m/[39m[33mMockedProvider[39m[33m>[39m[0m[22m
-[2m[22m
-[2m      [2mat MockLink.Object.<anonymous>.MockLink.request ([22m[2mnode_modules/@apollo/client/testing/core/mocking/mockLink.js[2m:74:25)[22m[2m[22m
-[2m      [2mat Object.<anonymous>.ApolloLink.execute ([22m[2mnode_modules/@apollo/client/link/core/ApolloLink.js[2m:47:22)[22m[2m[22m
-[2m      [2mat QueryManager.execute [as getObservableFromLink] ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:712:25)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.getResultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:748:30)[22m[2m[22m
-[2m      [2mat resultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1041:26)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchQueryByPolicy ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1069:52)[22m[2m[22m
-[2m      [2mat fromVariables ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:811:41)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchConcastWithInfo ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:853:35)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.fetch ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:535:57)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserveAsConcast ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:653:23)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserve ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:681:21)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:39:23[22m[2m[22m
-[2m      [2mat new Subscription ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:197:34)[22m[2m[22m
-[2m      [2mat ObservableQuery.subscribe ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:279:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/react/hooks/useQuery.js[2m:206:41[22m[2m[22m
-[2m      [2mat subscribeToStore ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:16139:10)[22m[2m[22m
-[2m      [2mat commitHookEffectListMount ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:23189:26)[22m[2m[22m
-[2m      [2mat commitPassiveMountOnFiber ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24970:11)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_complete ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24930:9)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_begin ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24917:7)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24905:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffectsImpl ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27078:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27023:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:26808:9[22m[2m[22m
-[2m      [2mat flushActQueue ([22m[2mnode_modules/react/cjs/react.development.js[2m:2667:24)[22m[2m[22m
-[2m      [2mat act ([22m[2mnode_modules/react/cjs/react.development.js[2m:2582:11)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@testing-library/react/dist/act-compat.js[2m:47:25[22m[2m[22m
-[2m      [2mat renderRoot ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:180:26)[22m[2m[22m
-[2m      [2mat render ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:271:10)[22m[2m[22m
-[2m      [2mat Object.<anonymous> ([22m[2msrc/dog2.test.tsx[2m:156:9)[22m[2m[22m
-[39m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[999D[K
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[31m  [2m[33mconsole.warn[39m[22m
-[33m    No more mocked responses for the query: query GetLocations {[39m
-[33m      locations {[39m
-[33m        id[39m
-[33m        name[39m
-[33m        description[39m
-[33m        photo[39m
-[33m      }[39m
-[33m    }[39m
-[33m    Expected variables: {"name":"name2"}[39m
-[33m    [39m
-[33m    This typically indicates a configuration error in your mocks setup, usually due to a typo or mismatched variable.[39m
-[2m[22m
-[2m    [0m [90m 154 |[39m test([32m"renders without error second 8"[39m[33m,[39m [36masync[39m () [33m=>[39m {[22m
-[2m     [90m 155 |[39m   [22m
-[2m    [31m[1m>[22m[2m[39m[90m 156 |[39m   render([22m
-[2m     [90m     |[39m         [31m[1m^[22m[2m[39m[22m
-[2m     [90m 157 |[39m     [33m<[39m[33mMockedProvider[39m mocks[33m=[39m{[]} addTypename[33m=[39m{[36mfalse[39m}[33m>[39m[22m
-[2m     [90m 158 |[39m       [33m<[39m[33mDog[39m name[33m=[39m[32m"Buck12"[39m name2[33m=[39m[32m"Buck2"[39m name3[33m=[39m[32m"buck3"[39m name4[33m=[39m[32m"Buck4"[39m name5[33m=[39m[32m"Buck5"[39m [33m/[39m[33m>[39m[22m
-[2m     [90m 159 |[39m     [33m<[39m[33m/[39m[33mMockedProvider[39m[33m>[39m[0m[22m
-[2m[22m
-[2m      [2mat MockLink.Object.<anonymous>.MockLink.request ([22m[2mnode_modules/@apollo/client/testing/core/mocking/mockLink.js[2m:74:25)[22m[2m[22m
-[2m      [2mat Object.<anonymous>.ApolloLink.execute ([22m[2mnode_modules/@apollo/client/link/core/ApolloLink.js[2m:47:22)[22m[2m[22m
-[2m      [2mat QueryManager.execute [as getObservableFromLink] ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:712:25)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.getResultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:748:30)[22m[2m[22m
-[2m      [2mat resultsFromLink ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1041:26)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchQueryByPolicy ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:1069:52)[22m[2m[22m
-[2m      [2mat fromVariables ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:811:41)[22m[2m[22m
-[2m      [2mat QueryManager.Object.<anonymous>.QueryManager.fetchConcastWithInfo ([22m[2mnode_modules/@apollo/client/core/QueryManager.js[2m:853:35)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.fetch ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:535:57)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserveAsConcast ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:653:23)[22m[2m[22m
-[2m      [2mat ObservableQuery.Object.<anonymous>.ObservableQuery.reobserve ([22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:681:21)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/core/ObservableQuery.js[2m:39:23[22m[2m[22m
-[2m      [2mat new Subscription ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:197:34)[22m[2m[22m
-[2m      [2mat ObservableQuery.subscribe ([22m[2mnode_modules/zen-observable/lib/Observable.js[2m:279:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@apollo/client/react/hooks/useQuery.js[2m:206:41[22m[2m[22m
-[2m      [2mat subscribeToStore ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:16139:10)[22m[2m[22m
-[2m      [2mat commitHookEffectListMount ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:23189:26)[22m[2m[22m
-[2m      [2mat commitPassiveMountOnFiber ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24970:11)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_complete ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24930:9)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects_begin ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24917:7)[22m[2m[22m
-[2m      [2mat commitPassiveMountEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:24905:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffectsImpl ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27078:3)[22m[2m[22m
-[2m      [2mat flushPassiveEffects ([22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:27023:14)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/react-dom/cjs/react-dom.development.js[2m:26808:9[22m[2m[22m
-[2m      [2mat flushActQueue ([22m[2mnode_modules/react/cjs/react.development.js[2m:2667:24)[22m[2m[22m
-[2m      [2mat act ([22m[2mnode_modules/react/cjs/react.development.js[2m:2582:11)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@testing-library/react/dist/act-compat.js[2m:47:25[22m[2m[22m
-[2m      [2mat renderRoot ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:180:26)[22m[2m[22m
-[2m      [2mat render ([22m[2mnode_modules/@testing-library/react/dist/pure.js[2m:271:10)[22m[2m[22m
-[2m      [2mat Object.<anonymous> ([22m[2msrc/dog2.test.tsx[2m:156:9)[22m[2m[22m
-[39m
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[31m(node:31502) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
+[K[1A[K[1A[31m(node:5925) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
 (Use `node --trace-deprecation ...` to show where the warning was created)[39m
 
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[0m[7m[1m[31m FAIL [39m[22m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
+[K[1A[K[1A[0m[7m[1m[32m PASS [39m[22m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
 
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A  [32m✓[39m [2mrenders without error second 1000 (100 ms)[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
+[K[1A[K[1A  ComponentName
 
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A  [32m✓[39m [2mrenders without error second 2000 (15 ms)[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
+[K[1A[K[1A    [32m✓[39m [2mrenders without error second (90 ms)[22m
 
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A  [32m✓[39m [2mrenders without error second (20 ms)[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
+[K[1A[K[1A  ComponentName2
 
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A  [31m✕[39m [2mrenders without error second 2 (26 ms)[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
+[K[1A[K[1A    ComponentName3
 
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A  [32m✓[39m [2mrenders without error second 3 (16 ms)[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
+[K[1A[K[1A      [32m✓[39m [2mrenders without error second2 (9 ms)[22m
 
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A  [32m✓[39m [2mrenders without error second 4 (19 ms)[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
+[K[1A[K[1A  ComponentName4
 
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A  [32m✓[39m [2mrenders without error second 5 (12 ms)[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
+[K[1A[K[1A    ComponentName5
 
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A  [32m✓[39m [2mrenders without error second 6 (13 ms)[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
+[K[1A[K[1A      ComponentName6
 
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A  [32m✓[39m [2mrenders without error second 7 (16 ms)[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
+[K[1A[K[1A        ComponentName7
 
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A  [32m✓[39m [2mrenders without error second 8 (19 ms)[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
+[K[1A[K[1A          [32m✓[39m [2mrenders without error second 300 (9 ms)[22m
 
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
 [K[1A[K[1A
 
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[1m[31m  [1m● [22m[1mrenders without error second 2[39m[22m
-
-    TestingLibraryElementError: Unable to find an element with the text: kjkjkjkj.... This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
-
-    Ignored nodes: comments, script, style
-    [36m<body>[39m
-      [36m<div>[39m
-        [36m<p>[39m
-          [0mLoading...[0m
-        [36m</p>[39m
-      [36m</div>[39m
-    [36m</body>[39m
-[2m[22m
-[2m    [0m [90m 91 |[39m    [22m
-[2m     [90m 92 |[39m   )[33m;[39m[22m
-[2m    [31m[1m>[22m[2m[39m[90m 93 |[39m   expect(screen[33m.[39mgetByText([32m"kjkjkjkj..."[39m))[33m.[39mtoBeInTheDocument()[33m;[39m[22m
-[2m     [90m    |[39m                 [31m[1m^[22m[2m[39m[22m
-[2m     [90m 94 |[39m })[33m;[39m[22m
-[2m     [90m 95 |[39m[22m
-[2m     [90m 96 |[39m[0m[22m
-[2m[22m
-[2m      [2mat Object.getElementError ([22m[2mnode_modules/@testing-library/dom/dist/config.js[2m:37:19)[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@testing-library/dom/dist/query-helpers.js[2m:76:38[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@testing-library/dom/dist/query-helpers.js[2m:52:17[22m[2m[22m
-[2m      [2mat [22m[2mnode_modules/@testing-library/dom/dist/query-helpers.js[2m:95:19[22m[2m[22m
-[2m      [2mat Object.<anonymous> ([22m[2m[0m[36msrc/dog2.test.tsx[39m[0m[2m:93:17)[22m[2m[22m
-
-
-[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog2.test.tsx[22m
-[K[1A[K[1A[999D[K[1mTest Suites: [22m[1m[31m1 failed[39m[22m, 1 total
-[1mTests:       [22m[1m[31m1 failed[39m[22m, [1m[32m9 passed[39m[22m, 10 total
+[0m[7m[33m[1m RUNS [22m[39m[27m[0m [2msrc/[22m[1mdog.test.tsx[22m
+[K[1A[K[1A[999D[K[1mTest Suites: [22m[1m[32m1 passed[39m[22m, 1 total
+[1mTests:       [22m[1m[32m3 passed[39m[22m, 3 total
 [1mSnapshots:   [22m0 total
-[1mTime:[22m        2.276 s
-[2mRan all test suites[22m[2m matching [22m/\/Users\/anjani.kumar\/Desktop\/dummy\/project2\/src\/dog2.test.tsx/i[2m.[22m
+[1mTime:[22m        1.852 s
+[2mRan all test suites[22m[2m matching [22m/\/Users\/anjani.kumar\/Desktop\/dummy\/project2\/src\/dog.test.tsx/i[2m.[22m
 [1G[0K⠙[1G[0K
